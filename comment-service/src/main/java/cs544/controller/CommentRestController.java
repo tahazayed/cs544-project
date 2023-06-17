@@ -1,19 +1,16 @@
-package cs544;
+package cs544.controller;
 
+import cs544.model.Comment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.view.RedirectView;
-
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
 public class CommentRestController {
     @Autowired
-    private CommentService CommentService;
+    private cs544.service.CommentService CommentService;
 
     @GetMapping(value= "/comments/", produces="application/json")
 //    public List<Comment> getAll() {

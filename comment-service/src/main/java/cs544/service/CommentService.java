@@ -1,12 +1,13 @@
-package cs544;
+package cs544.service;
 
+import cs544.model.Comment;
+import cs544.repository.CommentDao;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.UUID;
 
 @Service
 @Transactional
