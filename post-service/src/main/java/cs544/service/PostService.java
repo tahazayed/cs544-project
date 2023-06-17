@@ -27,11 +27,11 @@ public class PostService implements IPostService {
         return iPostDao.save(post);
     }
 
-    public Post get(long id){
+    public Post get(Long id){
         return iPostDao.findById(id).get();
     }
 
-    public void delete(long id){
+    public void delete(Long id){
         iPostDao.deleteById(id);
     }
 

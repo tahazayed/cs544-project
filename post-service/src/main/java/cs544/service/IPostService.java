@@ -11,6 +11,6 @@ public interface IPostService
     public List<Post> getAll();
     public Post add(Post post);
     public Post update(Post post);
-    public Post get(long id);
-    public void delete(long id);
+    public Post get(Long id);
+    public void delete(Long id);
 }
