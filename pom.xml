@@ -6,6 +6,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>cs544-project-microservices</artifactId>
 	<modules>
+		<module>comment-service</module>
+		<module>post-service</module>
 		<module>vote-service</module>
 	</modules>
 </project>
