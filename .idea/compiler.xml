@@ -7,25 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="comments-service" />
-        <module name="W3D3-Boot" />
-        <module name="comment-service" />
-        <module name="MVC" />
+        <module name="VOTE" />
         <module name="W3D3-REST" />
-        <module name="W3D1-MVC2" />
-        <module name="W3D2-SEC" />
-        <module name="W3D2-VAL" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="MVC" options="-endorseddirs D:\CS544\exercises\W3D1-MVC\target/endorsed" />
-      <module name="W3D1-MVC2" options="-endorseddirs D:\CS544\exercises\W3D1-MVC2\target/endorsed" />
-      <module name="W3D2-SEC" options="-endorseddirs D:\CS544\exercises\W3D2-SEC\target/endorsed" />
-      <module name="W3D2-VAL" options="-endorseddirs D:\CS544\exercises\W3D2-VAL\target/endorsed" />
-      <module name="W3D3-Boot" options="-parameters" />
+      <module name="VOTE" options="-parameters" />
       <module name="W3D3-REST" options="-parameters" />
-      <module name="comment-service" options="-parameters" />
       <module name="comments-service" options="-parameters" />
     </option>
   </component>
