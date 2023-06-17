@@ -2,6 +2,8 @@ package cs544;
 
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -52,9 +54,15 @@ public class VoteCreationObject implements Serializable {
         this.postId = postId;
     }
 
+    @NotNull
+    @Positive
     private Long userId;
+    @NotNull
+    @Positive
     private Long commentId;
     @Enumerated(EnumType.STRING)
     private VoteOptions vote;
+    @NotNull
+    @Positive
     private Long postId;
 }
