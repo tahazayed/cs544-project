@@ -8,7 +8,7 @@ import io.swagger.v3.oas.annotations.info.Info;
 import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration;
 
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"cs544.**"})
 //@EnableAutoConfiguration(exclude = {ErrorMvcAutoConfiguration.class})
 public class VoteApplication {
 

@@ -16,7 +16,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="VOTE" target="17" />
       <module name="vote" target="17" />
     </bytecodeTargetLevel>
   </component>

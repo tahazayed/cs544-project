@@ -1,10 +1,5 @@
 FROM eclipse-temurin:19-jdk-alpine
-
-RUN apk update
-RUN apk add maven
-
 VOLUME /tmp
 ARG JAR_FILE
-COPY . .
-RUN mvn package
-ENTRYPOINT ["mvn","spring-boot:run"]
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
