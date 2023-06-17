@@ -13,4 +13,6 @@ public interface IPostService
     public Post update(Post post);
     public Post get(long id);
     public void delete(long id);
+
+    Post get(Long id);
 }
