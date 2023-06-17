@@ -7,7 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="W3D3-Boot" />
-        <module name="VOTE" />
+        <module name="vote-service" />
         <module name="MVC" />
         <module name="W3D3-REST" />
         <module name="W3D1-MVC2" />
@@ -16,6 +16,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="VOTE" target="17" />
       <module name="vote" target="17" />
     </bytecodeTargetLevel>
   </component>
@@ -28,6 +29,7 @@
       <module name="W3D2-VAL" options="-endorseddirs D:\CS544\exercises\W3D2-VAL\target/endorsed" />
       <module name="W3D3-Boot" options="-parameters" />
       <module name="W3D3-REST" options="-parameters" />
+      <module name="vote-service" options="-parameters" />
     </option>
   </component>
 </project>

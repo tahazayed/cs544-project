@@ -1,4 +1,4 @@
-package cs544;
+package cs544.model;
 
 import jakarta.persistence.*;
 

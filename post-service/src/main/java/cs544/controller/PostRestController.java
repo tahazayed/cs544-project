@@ -1,5 +1,7 @@
-package cs544;
+package cs544.controller;
 
+import cs544.model.Post;
+import cs544.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
