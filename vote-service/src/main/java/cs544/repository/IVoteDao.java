@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 import java.util.List;
-
 public interface IVoteDao extends JpaRepository<Vote, Long> {
     Vote findFirstByUserIdAndCommentIdAndVote(Long userId, Long commentId, VoteOptions vote);
 
