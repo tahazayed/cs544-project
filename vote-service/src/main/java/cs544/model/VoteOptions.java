@@ -3,7 +3,7 @@ package cs544.model;
 import java.io.Serializable;
 
 public enum VoteOptions implements Serializable {
-    UP,
+    Up,
     Down;
 
 //   private Integer vote;
