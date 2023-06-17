@@ -1,5 +1,6 @@
-package cs544;
+package cs544.service;
 
+import cs544.model.Post;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

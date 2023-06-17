@@ -1,5 +1,7 @@
-package cs544;
+package cs544.service;
 
+import cs544.model.Post;
+import cs544.repository.IPostDao;
 import jakarta.transaction.Transactional;
 import org.springframework.aop.PointcutAdvisor;
 import org.springframework.beans.factory.annotation.Autowired;
