@@ -1,0 +1,21 @@
+version: "3"
+services:
+  vote-service:
+    image: vote-service
+    ports:
+      - "8084:8084"
+    networks:
+      - blog-mysql
+    depends_on:
+      - mysqldb
+ 
+  mysqldb:
+    image: mysql:8
+    networks:
+      - blog-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=bootdb  
+
+networks:
+  blog-mysql:
