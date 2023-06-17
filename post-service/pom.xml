@@ -72,7 +72,7 @@
 				<executions>
 					<execution>
 						<configuration>
-							<mainClass>cs544.App</mainClass>
+							<mainClass>cs544.PostApplication</mainClass>
 						</configuration>
 					</execution>
 				</executions>
