@@ -26,7 +26,7 @@ public class PostServiceProxy implements IPostService {
     @Override
 
     public Post get(Long id) {
-        System.out.println(postUrl);
+        //System.out.println(postUrl);
         return restTemplate.getForObject(postUrl, Post.class, id);
     }
 
@@ -46,6 +46,7 @@ public class PostServiceProxy implements IPostService {
         m.matches();
         return Long.parseLong(m.group(1));
     }
+
     @Override
     public void update(Post p) {
         restTemplate.put(postUrl, p, p.getId());

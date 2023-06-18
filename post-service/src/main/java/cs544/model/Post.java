@@ -2,9 +2,9 @@ package cs544.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "posts", uniqueConstraints = {@UniqueConstraint(columnNames = {"title"})})
@@ -22,10 +22,6 @@ public class Post {
     private String content;
     private Integer userid;
     private Date creation;
-
-//    @ManyToOne
-//    @JoinColumn(name="category_id")
-//    private Category category;
 
     public Post() {
 
