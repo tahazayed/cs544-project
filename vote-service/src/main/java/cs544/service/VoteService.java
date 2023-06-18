@@ -6,6 +6,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 @Service
@@ -43,7 +44,13 @@ public class VoteService implements IVoteService {
 
     @Override
     public Vote get(Long id) {
-        return voteDao.findById(id).get();
+        Vote vote = null;
+        try {
+            vote = voteDao.findById(id).get();
+        } catch (Exception var4) {
+            //Ignore
+        }
+        return vote;
     }
 
     @Override

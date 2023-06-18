@@ -1,15 +1,15 @@
 package cs544.client;
 
 import cs544.dto.VoteCreationObject;
-
 import cs544.model.Vote;
 import jakarta.validation.constraints.NotNull;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.servlet.view.RedirectView;
 
 import java.net.URI;
 import java.util.List;
@@ -18,9 +18,15 @@ import java.util.regex.Pattern;
 
 @Service
 public class VoteServiceProxy implements IVoteServiceProxy {
-    //private RestTemplate restTemplate;
+    private final ConfigurableEnvironment env;
     RestTemplate restTemplate = new RestTemplate();
-    private final String baseUrl = "http://localhost:8084/api";
+    private String baseUrl;
+
+
+    public VoteServiceProxy( @Autowired ConfigurableEnvironment env) {
+        this.env = env;
+        this.baseUrl = env.getProperty("vote.base.url");
+    }
 
     @Override
     public List<Vote> getAll() {
@@ -64,6 +70,7 @@ public class VoteServiceProxy implements IVoteServiceProxy {
     @Override
     public Long add(VoteCreationObject voteCreationObject) {
         String postUrl = baseUrl + "/vote/";
+        System.out.println(postUrl);
         URI uri = restTemplate.postForLocation(postUrl, voteCreationObject);
         if (uri == null) { return null; }
         Matcher m = Pattern.compile(".*/vote/(\\d+)").matcher(uri.getPath());

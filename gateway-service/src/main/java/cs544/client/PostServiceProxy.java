@@ -1,7 +1,9 @@
 package cs544.client;
 
 import cs544.model.Post;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -14,10 +16,16 @@ import java.util.regex.Pattern;
 
 @Service
 public class PostServiceProxy implements IPostServiceProxy {
-
+    private final ConfigurableEnvironment env;
     RestTemplate restTemplate = new RestTemplate();
-    private final String postUrl = "http://localhost:8082/api/post/{id}";
-    private final String pplUrl = "http://localhost:8082/api/post/";
+    private String postUrl;
+    private String pplUrl;
+    @Autowired
+    public PostServiceProxy(ConfigurableEnvironment env) {
+        this.env = env;
+        this.postUrl = env.getProperty("post.base.url") + "/post/{id}";
+        this.pplUrl = env.getProperty("post.base.url") + "/post/";
+    }
 
     @Override
 
@@ -30,14 +38,17 @@ public class PostServiceProxy implements IPostServiceProxy {
     public List<Post> getAll() {
         ResponseEntity<List<Post>> response =
                 restTemplate.exchange(pplUrl, HttpMethod.GET, null,
-                        new ParameterizedTypeReference<List<Post>>() {});
+                        new ParameterizedTypeReference<List<Post>>() {
+                        });
         return response.getBody();
     }
 
     @Override
     public Long add(Post p) {
         URI uri = restTemplate.postForLocation(pplUrl, p);
-        if (uri == null) { return null; }
+        if (uri == null) {
+            return null;
+        }
         Matcher m = Pattern.compile(".*/post/(\\d+)").matcher(uri.getPath());
         m.matches();
         return Long.parseLong(m.group(1));
@@ -47,6 +58,7 @@ public class PostServiceProxy implements IPostServiceProxy {
     public void update(Post p) {
         restTemplate.put(postUrl, p, p.getId());
     }
+
     @Override
     public void delete(Long id) {
         restTemplate.delete(postUrl, id);

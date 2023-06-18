@@ -54,5 +54,9 @@ public class CommentRestController {
         commentService.delete(id);
     }
 
+    @DeleteMapping("/comments/post/{id}")
+    public void deleteByPostId(@PathVariable Long id) {
 
+        commentService.deleteAllByPostId(id);
+    }
 }

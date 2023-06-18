@@ -1,8 +1,9 @@
 package cs544.client;
 
 import cs544.model.Comment;
-import cs544.model.Comment;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -15,22 +16,24 @@ import java.util.regex.Pattern;
 
 @Service
 public class CommentServiceProxy implements ICommentServiceProxy {
+    private final ConfigurableEnvironment env;
     RestTemplate restTemplate = new RestTemplate();
-    private final String baseUrl = "http://localhost:8084/api";
-    private final String commentUrl = baseUrl + "/comment/{id}";
-    private final String pplUrl = baseUrl + "/comment/";
-
+    private String baseUrl;
+    private String commentUrl;
+    private String pplUrl;
+    @Autowired
+    public CommentServiceProxy(ConfigurableEnvironment env) {
+        this.env = env;
+        this.baseUrl = System.getProperty("comment.base.url");
+        this.commentUrl = baseUrl + "/comment/{id}";
+        this.pplUrl = baseUrl + "/comment/";
+    }
     @Override
 
     public Comment get(Long id) {
+
         return restTemplate.getForObject(commentUrl, Comment.class, id);
     }
-
-    @Override
-    public void deleteAllByPostId(Long id) {
-        restTemplate.delete(baseUrl + "/comment/post/{id}", id);
-    }
-
     @Override
     public List<Comment> getAll() {
         ResponseEntity<List<Comment>> response =
@@ -39,7 +42,6 @@ public class CommentServiceProxy implements ICommentServiceProxy {
                         });
         return response.getBody();
     }
-
     @Override
     public Long add(Comment p) {
         URI uri = restTemplate.postForLocation(pplUrl, p);
@@ -61,5 +63,11 @@ public class CommentServiceProxy implements ICommentServiceProxy {
     public void delete(Long id) {
 
         restTemplate.delete(commentUrl, id);
+    }
+
+    @Override
+    public void deleteAllByPostId(Long id) {
+
+        restTemplate.delete(baseUrl + "/comment/post/{id}", id);
     }
 }

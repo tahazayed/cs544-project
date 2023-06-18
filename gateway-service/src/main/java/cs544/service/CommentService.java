@@ -51,6 +51,7 @@ public class CommentService implements ICommentService {
 
     @Override
     public void deleteAllByPostId(Long id) {
+
         commentServiceProxy.deleteAllByPostId(id);
     }
 }
