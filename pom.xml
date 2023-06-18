@@ -9,6 +9,7 @@
 		<module>comment-service</module>
 		<module>gateway-service</module>
 		<module>post-service</module>
+		<module>user-service</module>
 		<module>vote-service</module>
 	</modules>
 </project>
