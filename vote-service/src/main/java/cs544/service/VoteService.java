@@ -10,51 +10,59 @@ import java.util.List;
 
 @Service
 @Transactional
-public class VoteService {
+public class VoteService implements IVoteService {
     @Autowired
     private IVoteDao voteDao;
 
+    @Override
     public List<Vote> getAll() {
         return voteDao.findAll();
     }
 
+    @Override
     public void add(Vote vote) {
         var existingVote = voteDao.findFirstByUserIdAndCommentIdAndVote(vote.getUserId(),
                 vote.getCommentId(), vote.getVote());
-        if (existingVote == null)
-        {
+        if (existingVote == null) {
             voteDao.save(vote);
-        }
-        else {
+        } else {
             vote.setId(existingVote.getId());
             vote.setVersion(existingVote.getVersion());
         }
     }
 
+    @Override
     public void update(Vote vote) {
         voteDao.save(vote);
     }
 
+    @Override
     public void delete(Long voteId) {
         voteDao.deleteById(voteId);
     }
 
+    @Override
     public Vote get(Long id) {
         return voteDao.findById(id).get();
     }
 
-    public void deleteAllByPostId(Long postId)
-    {
+    @Override
+    public void deleteAllByPostId(Long postId) {
         voteDao.deleteAllByPostId(postId);
     }
 
+    @Override
     public void deleteAllByCommentId(Long commentId) {
         voteDao.deleteAllByCommentId(commentId);
     }
-    public List<Vote> getAllByPostId(Long postId){
+
+    @Override
+    public List<Vote> getAllByPostId(Long postId) {
         return voteDao.findAllByPostId(postId);
     }
-    public List<Vote> getAllByCommentId(Long commentId){
+
+    @Override
+    public List<Vote> getAllByCommentId(Long commentId) {
         return voteDao.findAllByCommentId(commentId);
     }
 }

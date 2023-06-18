@@ -7,6 +7,7 @@
 	<artifactId>cs544-project-microservices</artifactId>
 	<modules>
 		<module>comment-service</module>
+		<module>gateway-service</module>
 		<module>post-service</module>
 		<module>vote-service</module>
 	</modules>
