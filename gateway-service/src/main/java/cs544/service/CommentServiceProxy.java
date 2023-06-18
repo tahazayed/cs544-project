@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 @Transactional
-public class CommentService {
+public class CommentServiceProxy {
     @Autowired
     private CommentDao commentDao;
 

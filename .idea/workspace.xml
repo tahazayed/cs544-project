@@ -4,11 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3ad415c-7391-44c6-a6b5-91533a74bea6" name="Changes" comment="" />
+    <list default="true" id="5d907159-c707-494a-8b3f-cff3b3097d03" name="Changes" comment="">
+<<<<<<< HEAD
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/controller/CommentRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/model/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/CommentDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/CommentServiceProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/controller/CommentRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/controller/CommentRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/model/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/service/CommentService.java" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/client/IPostServiceProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/controller/PostRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/controller/PostRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/IPostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/IPostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/PostServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/client/PostServiceProxy.java" afterDir="false" />
+>>>>>>> 3b4b51e20facab1d3e90fd38a36703775c3389e7
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -23,43 +49,84 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="2RL4TUH7X4coeyN6KQB6ujaigv3" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2RM9fBd4vivw6pR9rWUPVMNX0IR" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/CS544/exercises/cs544-project",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+<<<<<<< HEAD
+    "last_opened_file_path": "/Users/sandraluwedde/Desktop/cs544/exercises/cs544-project",
+=======
+>>>>>>> 3b4b51e20facab1d3e90fd38a36703775c3389e7
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+<<<<<<< HEAD
+    "spring.configuration.checksum": "7fc6022a5b7d1ab6c582e8353409621f",
+=======
+    "spring.configuration.checksum": "1875277d888184f0657bf8fe2bb7fad7",
+>>>>>>> 3b4b51e20facab1d3e90fd38a36703775c3389e7
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\CS544\exercises\cs544-project\post-service\src\main\java\cs544\service" />
-      <recent name="D:\CS544\exercises\cs544-project\post-service\src\main\java\cs544\repository" />
-      <recent name="D:\CS544\exercises\cs544-project\post-service\src\main\java\cs544\model" />
-      <recent name="D:\CS544\exercises\cs544-project\post-service\src\main\java\cs544\dto" />
-      <recent name="D:\CS544\exercises\cs544-project\post-service\src\main\java\cs544\controller" />
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cs544.service" />
+      <recent name="cs544.model" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+  <component name="RunManager" selected="Spring Boot.GatewayApplication">
+    <configuration name="CommentApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="comments-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cs544.CommentApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="comment-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cs544.CommentApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="gateway-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cs544.GatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="W3D3-REST" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cs544.PostApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="post-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cs544.PostApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VoteApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="VOTE" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="cs544.App" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cs544.VoteApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VoteApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="vote-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cs544.VoteApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -68,30 +135,21 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e3ad415c-7391-44c6-a6b5-91533a74bea6" name="Changes" comment="" />
-      <created>1687016042298</created>
+      <changelist id="5d907159-c707-494a-8b3f-cff3b3097d03" name="Changes" comment="" />
+      <created>1687049191335</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1687016042298</updated>
-      <workItem from="1687016044111" duration="2070000" />
+      <updated>1687049191335</updated>
+      <workItem from="1687049193575" duration="295000" />
+<<<<<<< HEAD
+      <workItem from="1687051266307" duration="3379000" />
+=======
+      <workItem from="1687051990927" duration="598000" />
+>>>>>>> 3b4b51e20facab1d3e90fd38a36703775c3389e7
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

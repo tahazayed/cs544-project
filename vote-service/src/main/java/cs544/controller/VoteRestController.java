@@ -2,7 +2,7 @@ package cs544.controller;
 
 import cs544.model.Vote;
 import cs544.dto.VoteCreationObject;
-import cs544.service.VoteService;
+import cs544.service.IVoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
@@ -13,67 +13,64 @@ import java.util.List;
 @RequestMapping("/api")
 public class VoteRestController {
     @Autowired
-    private VoteService voteService;
-
-    @GetMapping(value = "/votes/", produces = "application/json")
+    private IVoteService voteService;
+    @GetMapping(value = "/vote/", produces = "application/json")
     public List<Vote> getAll() {
 
         return voteService.getAll();
     }
-
-    @GetMapping(value = "/votes/post/{id}", produces = "application/json")
+    @GetMapping(value = "/vote/post/{id}", produces = "application/json")
     public List<Vote> getAllByPostId(@PathVariable Long id) {
 
         return voteService.getAllByPostId(id);
     }
 
-    @GetMapping(value = "/votes/comment/{id}", produces = "application/json")
+    @GetMapping(value = "/vote/comment/{id}", produces = "application/json")
     public List<Vote> getAllByCommentId(@PathVariable Long id) {
 
         return voteService.getAllByCommentId(id);
     }
 
-    @GetMapping(value = "/votes/{id}", produces = "application/json")
+    @GetMapping(value = "/vote/{id}", produces = "application/json")
     public Vote get(@PathVariable Long id) {
 
         return voteService.get(id);
     }
-
-    @PostMapping(value = "/votes/", consumes = "application/json")
+    @PostMapping(value = "/vote/", consumes = "application/json")
     public RedirectView add(@RequestBody VoteCreationObject voteCreationObject) {
         Vote vote = new Vote(voteCreationObject.getUserId(),
                 voteCreationObject.getCommentId(),
                 voteCreationObject.getVote(),
                 voteCreationObject.getPostId());
         voteService.add(vote);
-        return new RedirectView("/api/votes/" + vote.getId());
+        return new RedirectView("/api/vote/" + vote.getId());
     }
 
 // not needed as user will always add a vote
-//    @PostMapping(value = "/votes/{id}", consumes = "application/json")
+//    @PostMapping(value = "/vote/{id}", consumes = "application/json")
 //    public void update(@RequestBody Vote vote) {
 //        voteService.update(vote);
 //    }
 
-//    @PutMapping(value= "/votes/{id}", consumes = "application/json")
+//    @PutMapping(value= "/vote/{id}", consumes = "application/json")
 //    public void put(@PathVariable long id, @RequestBody Vote vote) {
 //        if (id != vote.getId()) { throw new IllegalArgumentException(); }
 //        voteService.update(vote);
 //    }
 
-    @DeleteMapping("/votes/{id}")
+    @DeleteMapping("/vote/{id}")
     public void delete(@PathVariable Long id) {
 
         voteService.delete(id);
     }
 
-    @DeleteMapping("/votes/post/{id}")
+    @DeleteMapping("/vote/post/{id}")
     public void deleteAllByPostId(@PathVariable Long id) {
 
         voteService.deleteAllByPostId(id);
     }
 
-    @DeleteMapping("/votes/comment/{id}")
+    @DeleteMapping("/vote/comment/{id}")
     public void deleteAllByCommentId(@PathVariable Long id) {
 
         voteService.deleteAllByCommentId(id);

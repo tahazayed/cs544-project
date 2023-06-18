@@ -1,16 +1,15 @@
 package cs544.controller;
 
 import cs544.model.Comment;
+import cs544.service.CommentServiceProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping("/api")
 public class CommentRestController {
     @Autowired
-    private cs544.service.CommentService CommentService;
+    private CommentServiceProxy CommentService;
 
     @GetMapping(value= "/comments/", produces="application/json")
 
@@ -47,7 +46,6 @@ public class CommentRestController {
     public void delete(@PathVariable int id) {
         CommentService.delete(id);
     }
-
 
 
 
