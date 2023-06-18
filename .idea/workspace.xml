@@ -5,6 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d907159-c707-494a-8b3f-cff3b3097d03" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/service/ICommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/controller/CommentRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/controller/CommentRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/model/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/repository/CommentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/repository/ICommentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/service/CommentService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -32,38 +38,41 @@
     </option>
   </component>
   <component name="ProjectId" id="2RM9fBd4vivw6pR9rWUPVMNX0IR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-<<<<<<< HEAD
-    "last_opened_file_path": "/Users/sandraluwedde/Desktop/cs544/exercises/cs544-project",
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+    &quot;last_opened_file_path&quot;: &quot;/Users/sandraluwedde/Desktop/cs544/exercises/cs544-project&quot;,
 =======
->>>>>>> 3b4b51e20facab1d3e90fd38a36703775c3389e7
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-<<<<<<< HEAD
-    "spring.configuration.checksum": "7fc6022a5b7d1ab6c582e8353409621f",
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3b4b51e20facab1d3e90fd38a36703775c3389e7
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+    &quot;spring.configuration.checksum&quot;: &quot;7fc6022a5b7d1ab6c582e8353409621f&quot;,
 =======
-    "spring.configuration.checksum": "1875277d888184f0657bf8fe2bb7fad7",
->>>>>>> 3b4b51e20facab1d3e90fd38a36703775c3389e7
-    "vue.rearranger.settings.migration": "true"
+    &quot;spring.configuration.checksum&quot;: &quot;1875277d888184f0657bf8fe2bb7fad7&quot;,
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3b4b51e20facab1d3e90fd38a36703775c3389e7
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="cs544.service" />
       <recent name="cs544.model" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.GatewayApplication">
+  <component name="RunManager" selected="Spring Boot.CommentApplication (1)">
     <configuration name="CommentApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="comments-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cs544.CommentApplication" />
@@ -122,6 +131,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1687049191335</updated>
+      <workItem from="1687061901567" duration="858000" />
     </task>
     <servers />
   </component>
