@@ -16,16 +16,19 @@ public class PostRestController {
 
     private final IPostService postService;
     public PostRestController(@Autowired IPostService postService) {
+
         this.postService = postService;
     }
 
     @GetMapping(value = "/post/",produces = "application/json")
     public List<Post> getAll(){
+
         return postService.getAll();
     }
 
     @GetMapping(value = "/post/{id}",produces = "application/json")
     public Post get(@PathVariable long id){
+
         return postService.get(id);
     }
 

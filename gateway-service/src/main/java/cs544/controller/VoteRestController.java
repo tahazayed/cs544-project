@@ -22,21 +22,25 @@ public class VoteRestController {
 
     @GetMapping(value = "/votes/", produces = "application/json")
     public List<Vote> getAll() {
+
         return voteServiceProxy.getAll();
     }
 
     @GetMapping(value = "/votes/post/{id}", produces = "application/json")
     public List<Vote> getAllByPostId(@PathVariable Long id) {
+
         return voteServiceProxy.getAllByPostId(id);
     }
 
     @GetMapping(value = "/votes/comment/{id}", produces = "application/json")
     public List<Vote> getAllByCommentId(@PathVariable Long id) {
+
         return voteServiceProxy.getAllByCommentId(id);
     }
 
     @GetMapping(value = "/votes/{id}", produces = "application/json")
     public Vote get(@PathVariable Long id) {
+
         return voteServiceProxy.get(id);
     }
 
