@@ -13,6 +13,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.0.4</version>
+		<relativePath />
 	</parent>
 	<dependencies>
 		<!-- automatically reloads app when development files change -->
@@ -93,7 +94,7 @@
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>dockerfile-maven-plugin</artifactId>
-				<version>1.4.13</version>
+				<version>1.4.10</version>
 				<executions>
 					<execution>
 						<id>default</id>
@@ -106,6 +107,9 @@
 				<configuration>
 					<repository>${project.artifactId}</repository>
 					<tag>latest</tag>
+					<contextDirectory>${project.basedir}</contextDirectory>
+					<dockerfile>Dockerfile</dockerfile>
+					<pullNewerImage>false</pullNewerImage>
 					<buildArgs>
 						<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
 					</buildArgs>
