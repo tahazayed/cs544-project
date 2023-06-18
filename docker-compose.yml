@@ -2,6 +2,7 @@ version: "3"
 services:
   mysqldb:
     image: mysql:5.7
+    container_name: mysqldb 
     networks:
       - blog-mysql
     ports:
@@ -10,10 +11,11 @@ services:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=bootdb
     volumes:
-      - /tmp/mysql:/var/lib/mysql      
+      - ./tmp/mysql:/var/lib/mysql      
 
   user-service:
     image: user-service
+    container_name: user-service
     ports:
       - "8081:8081"
     networks:
@@ -23,6 +25,7 @@ services:
 
   post-service:
     image: post-service
+    container_name: post-service    
     ports:
       - "8082:8082"
     networks:
@@ -32,6 +35,7 @@ services:
 
   comment-service:
     image: comment-service
+    container_name: comment-service    
     ports:
       - "8083:8083"
     networks:
@@ -41,6 +45,7 @@ services:
 
   vote-service:
     image: vote-service
+    container_name: vote-service    
     ports:
       - "8084:8084"
     networks:
@@ -50,6 +55,7 @@ services:
 
   gateway-service:
     image: gateway-service
+    container_name: gateway-service    
     ports:
       - "8080:8080"
     networks:
