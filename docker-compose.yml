@@ -1,14 +1,5 @@
 version: "3"
 services:
-  vote-service:
-    image: vote-service
-    ports:
-      - "8084:8084"
-    networks:
-      - blog-mysql
-    depends_on:
-      - mysqldb
- 
   mysqldb:
     image: mysql:5.7
     networks:
@@ -21,6 +12,51 @@ services:
     volumes:
       - /tmp/mysql:/var/lib/mysql      
 
+  user-service:
+    image: user-service
+    ports:
+      - "8081:8081"
+    networks:
+      - blog-mysql
+    depends_on:
+      - mysqldb
+
+  post-service:
+    image: post-service
+    ports:
+      - "8082:8082"
+    networks:
+      - blog-mysql
+    depends_on:
+      - user-service 
+
+  comment-service:
+    image: comment-service
+    ports:
+      - "8083:8083"
+    networks:
+      - blog-mysql
+    depends_on:
+      - post-service
+
+  vote-service:
+    image: vote-service
+    ports:
+      - "8084:8084"
+    networks:
+      - blog-mysql
+    depends_on:
+      - comment-service
+
+  gateway-service:
+    image: gateway-service
+    ports:
+      - "8080:8080"
+    networks:
+      - blog-mysql
+    depends_on:
+      - vote-service
+      
 networks:
   blog-mysql:
   
