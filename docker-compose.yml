@@ -28,7 +28,7 @@ services:
     networks:
       - blog-mysql
     depends_on:
-      - user-service 
+      - mysqldb 
 
   comment-service:
     image: comment-service
@@ -37,7 +37,7 @@ services:
     networks:
       - blog-mysql   
     depends_on:
-      - post-service
+      - mysqldb
 
   vote-service:
     image: vote-service
@@ -46,7 +46,7 @@ services:
     networks:
       - blog-mysql
     depends_on:
-      - comment-service
+      - mysqldb
 
   gateway-service:
     image: gateway-service
@@ -55,7 +55,7 @@ services:
     networks:
       - blog-mysql
     depends_on:
-      - vote-service
+      - mysqldb
       
 networks:
   blog-mysql:
