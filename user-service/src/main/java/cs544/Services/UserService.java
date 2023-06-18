@@ -7,6 +7,8 @@ import java.util.Optional;
 
 import cs544.Models.Roles;
 import cs544.Models.User;
+
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +39,10 @@ public class UserService {
             }
         }
         user.setRoles(roles);
+        String salt = BCrypt.gensalt();
+
+        // BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        user.setPassword(BCrypt.hashpw(user.getPassword(), salt));
         return Optional.of(ud.save(user));
     }
 

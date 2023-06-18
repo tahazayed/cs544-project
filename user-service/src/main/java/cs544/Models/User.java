@@ -38,7 +38,7 @@ public class User {
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @NotBlank(message = "Password is required")
-    @Size(min = 3, max = 15, message = "Password must be between 3 and 15 characters")
+    @Size(min = 3, message = "Select a strong password!")
     private String password;
 
     @Email(message = "Invalid email address")
