@@ -1,9 +1,12 @@
-# cs544-project ( group-08 )
+# CS544-project ( group-08 )
 
-## run the following commands on the root folder of the repo
+## - Run the following commands on the root folder of the repo
 
-mvn package
+- To build: mvn package
 
-docker compose up
+- To start: docker compose up
 
-docker compose down
+- Test url: http://localhost:8080/swagger-ui/index.html
+
+- To stop: docker compose down
+
