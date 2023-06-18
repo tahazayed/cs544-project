@@ -12,13 +12,13 @@ public class CommentRestController {
     @Autowired
     private cs544.service.CommentService CommentService;
 
-    @GetMapping(value= "/comments/", produces="application/json")
+    @GetMapping(value= "/comment/", produces="application/json")
 
     public ResponseEntity<?> getAll() {
         return new ResponseEntity<>(CommentService.getAll(), HttpStatus.OK);
     }
 
-    @GetMapping(value= "/comments/{id}", produces = "application/json")
+    @GetMapping(value= "/comment/{id}", produces = "application/json")
 
     public ResponseEntity<?> get(@PathVariable int id) {
         Comment comment = CommentService.get(id);
@@ -29,13 +29,13 @@ public class CommentRestController {
     }
 
 
-    @PostMapping(value= "/comments/", consumes = "application/json")
+    @PostMapping(value= "/comment/", consumes = "application/json")
     public ResponseEntity<?> add(@RequestBody Comment comment) {
         Comment response = CommentService.add(comment);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @PostMapping(value= "/comments/{id}", consumes = "application/json")
+    @PostMapping(value= "/comment/{id}", consumes = "application/json")
     public Comment update(@RequestBody Comment comment,@PathVariable Integer id) {
         comment.setId(id);
         CommentService.update(comment);
@@ -43,7 +43,7 @@ public class CommentRestController {
     }
 
 
-    @DeleteMapping("/comments/{id}")
+    @DeleteMapping("/comment/{id}")
     public void delete(@PathVariable int id) {
         CommentService.delete(id);
     }

@@ -22,21 +22,25 @@ public class PostService implements IPostService {
 
     @Override
     public List<Post> getAll() {
+
         return postServiceProxy.getAll();
     }
 
     @Override
     public Long add(Post post) {
+
         return postServiceProxy.add(post);
     }
 
     @Override
     public void update(Post post) {
+
         postServiceProxy.update(post);
     }
 
     @Override
     public Post get(Long id) {
+
         return postServiceProxy.get(id);
     }
 
