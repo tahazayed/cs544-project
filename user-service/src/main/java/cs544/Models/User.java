@@ -1,4 +1,4 @@
-package com.example.demo.Models;
+package cs544.Models;
 
 import java.util.ArrayList;
 import java.util.Calendar;

@@ -1,4 +1,4 @@
-package com.example.demo.Configuration.Filters;
+package cs544.Configuration.Filters;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

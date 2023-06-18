@@ -1,9 +1,9 @@
-package com.example.demo.Daos;
+package cs544.Daos;
 
+import cs544.Models.Roles;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.demo.Models.Roles;
-import com.example.demo.Models.enums.ERoles;
+import cs544.Models.enums.ERoles;
 
 public interface IRoleDao extends JpaRepository<Roles,Long> {
     

@@ -6,15 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="5d907159-c707-494a-8b3f-cff3b3097d03" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/controller/CommentRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/controller/CommentRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/model/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/repository/ICommentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/repository/ICommentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/service/CommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/service/ICommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/service/ICommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/client/CommentServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/client/CommentServiceProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/client/ICommentServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/client/ICommentServiceProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/CommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/ICommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/ICommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/demo/Configuration/FilterConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/cs544/Configuration/FilterConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/demo/Configuration/Filters/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/cs544/Configuration/Filters/JwtFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/demo/Controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/cs544/Controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/demo/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/cs544/Controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/demo/Daos/IRoleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/cs544/Daos/IRoleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/demo/Daos/IUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/cs544/Daos/IUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/demo/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/cs544/DemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/demo/Exceptions/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/cs544/Exceptions/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/demo/Exceptions/UserCreationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/cs544/Exceptions/UserCreationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/demo/Exceptions/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/cs544/Exceptions/UserNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/demo/HelperFunctions/HelperFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/cs544/HelperFunctions/HelperFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/demo/HelperFunctions/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/cs544/HelperFunctions/JwtUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/demo/Models/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/cs544/Models/Roles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/demo/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/cs544/Models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/demo/Models/enums/ERoles.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/cs544/Models/enums/ERoles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/demo/Services/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/cs544/Services/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/demo/Services/RolesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/cs544/Services/RolesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/demo/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/cs544/Services/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +126,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="user-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cs544.UserApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="VoteApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="VOTE" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cs544.VoteApplication" />
@@ -139,7 +156,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1687049191335</updated>
-      <workItem from="1687061901567" duration="1741000" />
+      <workItem from="1687061901567" duration="2197000" />
     </task>
     <servers />
   </component>

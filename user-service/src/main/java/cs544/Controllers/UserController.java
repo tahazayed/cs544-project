@@ -1,8 +1,10 @@
-package com.example.demo.Controllers;
+package cs544.Controllers;
 
 import java.util.List;
 import java.util.Optional;
 
+import cs544.Models.User;
+import cs544.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -14,10 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.view.RedirectView;
 
-import com.example.demo.Exceptions.UserCreationException;
-import com.example.demo.Exceptions.UserNotFoundException;
-import com.example.demo.Models.User;
-import com.example.demo.Services.UserService;
+import cs544.Exceptions.UserCreationException;
+import cs544.Exceptions.UserNotFoundException;
 
 @RestController
 @RequestMapping(value = "/api/users", produces = MediaType.APPLICATION_JSON_VALUE)

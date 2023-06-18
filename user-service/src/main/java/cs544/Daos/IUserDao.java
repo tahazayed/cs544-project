@@ -1,10 +1,9 @@
-package com.example.demo.Daos;
+package cs544.Daos;
 
 import java.util.Optional;
 
+import cs544.Models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.example.demo.Models.User;
 
 
 public interface IUserDao extends JpaRepository<User,Long>{

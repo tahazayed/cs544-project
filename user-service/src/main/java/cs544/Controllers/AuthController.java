@@ -1,11 +1,10 @@
-package com.example.demo.Controllers;
+package cs544.Controllers;
 
+import cs544.Models.User;
+import cs544.Services.AuthService;
+import cs544.Services.UserService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.example.demo.Models.User;
-import com.example.demo.Services.AuthService;
-import com.example.demo.Services.UserService;
 
 import java.util.HashMap;
 import java.util.Map;

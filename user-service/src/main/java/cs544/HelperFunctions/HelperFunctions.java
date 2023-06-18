@@ -1,8 +1,8 @@
-package com.example.demo.HelperFunctions;
+package cs544.HelperFunctions;
 
 import java.util.UUID;
 
-import com.example.demo.Models.User;
+import cs544.Models.User;
 
 public class HelperFunctions {
     

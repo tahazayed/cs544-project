@@ -1,10 +1,10 @@
-package com.example.demo.Configuration;
+package cs544.Configuration;
 
+import cs544.Configuration.Filters.JwtFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.example.demo.Configuration.Filters.JwtFilter;
 @Configuration
 public class FilterConfig {
     @Bean

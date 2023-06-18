@@ -1,16 +1,16 @@
-package com.example.demo.Services;
+package cs544.Services;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 
+import cs544.Models.Roles;
+import cs544.Models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.Daos.IUserDao;
-import com.example.demo.Models.User;
-import com.example.demo.Models.Roles;
+import cs544.Daos.IUserDao;
 
 @Service
 public class UserService {
@@ -19,7 +19,7 @@ public class UserService {
     @Autowired
     private RolesService roleServ;
 
-    public List < User > getAllUsers() {
+    public List <User> getAllUsers() {
         return ud.findAll();
     }
 
@@ -29,7 +29,7 @@ public class UserService {
 
     public Optional < User > saveUser(User user) {
 
-        List < Roles > roles = new ArrayList < > ();
+        List <Roles> roles = new ArrayList < > ();
         for (Roles userRole: user.getRoles()) {
             Roles existingRole = roleServ.findRoleByERole(userRole.getRole());
             if (existingRole != null) {

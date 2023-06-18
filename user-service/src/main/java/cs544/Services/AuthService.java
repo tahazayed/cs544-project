@@ -1,16 +1,16 @@
-package com.example.demo.Services;
+package cs544.Services;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+import cs544.Models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.Daos.IUserDao;
-import com.example.demo.Exceptions.UserNotFoundException;
-import com.example.demo.HelperFunctions.JwtUtils;
-import com.example.demo.Models.User;
+import cs544.Daos.IUserDao;
+import cs544.Exceptions.UserNotFoundException;
+import cs544.HelperFunctions.JwtUtils;
 
 @Service
 public class AuthService {

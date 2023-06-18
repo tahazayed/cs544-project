@@ -1,4 +1,4 @@
-package com.example.demo.Models.enums;
+package cs544.Models.enums;
 
 public enum ERoles {
     USER,
