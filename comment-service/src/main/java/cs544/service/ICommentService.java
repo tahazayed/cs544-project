@@ -7,11 +7,13 @@ import java.util.List;
 public interface ICommentService {
     List<Comment> getAll();
 
-    Comment add(Comment comment);
+    Long add(Comment comment);
 
     void update(Comment comment);
 
-    void delete(Long userId);
+    void delete(Long id);
 
     Comment get(Long id);
+
+    void deleteAllByPostId(Long postId);
 }

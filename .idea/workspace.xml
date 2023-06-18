@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d907159-c707-494a-8b3f-cff3b3097d03" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/service/ICommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/controller/CommentRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/controller/CommentRestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/model/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/repository/CommentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/repository/ICommentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/repository/ICommentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/repository/ICommentDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/service/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/service/ICommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/service/ICommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/client/CommentServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/client/CommentServiceProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/client/ICommentServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/client/ICommentServiceProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/ICommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/ICommentService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +72,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="cs544.service" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="cs544.service" />
       <recent name="cs544.model" />
@@ -131,7 +139,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1687049191335</updated>
-      <workItem from="1687061901567" duration="858000" />
+      <workItem from="1687061901567" duration="1741000" />
     </task>
     <servers />
   </component>

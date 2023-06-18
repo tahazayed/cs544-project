@@ -5,9 +5,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Entity
 public class Comment implements Serializable {
@@ -18,6 +20,7 @@ public class Comment implements Serializable {
     @NotBlank
     private String Name;
 
+    @Positive
     private Long userid;
     @NotBlank
     private String comment;
@@ -25,18 +28,19 @@ public class Comment implements Serializable {
 
     private LocalDateTime dateTime;
 
+    @Positive
     private Long postId;
 
     public Comment() {
 
     }
-    public Comment(String Name, Long userid, String comment){
+
+    public Comment(String Name, Long userid, String comment) {
         super();
         this.Name = Name;
         this.userid = userid;
         this.comment = comment;
     }
-
 
 
     public Long getId() {
@@ -72,7 +76,6 @@ public class Comment implements Serializable {
     }
 
 
-
     public LocalDateTime getDateTime() {
         return dateTime;
     }
@@ -91,13 +94,7 @@ public class Comment implements Serializable {
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((Name == null) ? 0 : Name.hashCode());
-        result = prime * result + ((userid == null) ? 0 : userid.hashCode());
-        result = prime * result + ((comment == null) ? 0 : comment.hashCode());
-//        result = prime * result + (int)price;
-        return result;
+        return Objects.hash(id, Name, userid, comment, dateTime, postId);
     }
 
     @Override
@@ -127,7 +124,5 @@ public class Comment implements Serializable {
 
         return true;
     }
-
-
 
 }

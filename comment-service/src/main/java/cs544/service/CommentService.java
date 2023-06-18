@@ -12,33 +12,48 @@ import java.util.List;
 @Service
 @Transactional
 public class CommentService implements ICommentService {
-    private final ICommentDao ICommentDao;
+    private final ICommentDao commentDao;
 
-    public CommentService(@Autowired ICommentDao ICommentDao) {
-        this.ICommentDao = ICommentDao;
+    public CommentService(@Autowired ICommentDao commentDao) {
+        this.commentDao = commentDao;
     }
 
     @Override
-    public List<Comment> getAll(){return ICommentDao.findAll();}
-    @Override
-    public Comment add(Comment comment){
-        comment.setDateTime(LocalDateTime.now());
+    public List<Comment> getAll() {
+        return commentDao.findAll();
+    }
 
-        return ICommentDao.save(comment);}
     @Override
-    public void update(Comment comment){
-        ICommentDao.save(comment);}
+    public Long add(Comment comment) {
+        comment.setDateTime(LocalDateTime.now());
+        comment = commentDao.save(comment);
+        return comment.getId();
+    }
+
     @Override
-    public void delete(Long userId){
-        ICommentDao.deleteById(userId);}
+    public void update(Comment comment) {
+        commentDao.save(comment);
+    }
+
     @Override
-    public Comment get(Long id){
-       try {return ICommentDao.findById(id).get();}
-           catch (Exception e){
-           e.printStackTrace();
-           return null;
-           }
-       }
+    public void delete(Long userId) {
+        commentDao.deleteById(userId);
+    }
+
+    @Override
+    public Comment get(Long id) {
+        try {
+            return commentDao.findById(id).get();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public void deleteAllByPostId(Long postId) {
+        commentDao.deleteAllByPostId(postId);
+    }
 
 
 }

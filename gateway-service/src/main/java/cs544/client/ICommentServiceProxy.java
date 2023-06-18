@@ -11,7 +11,8 @@ public interface ICommentServiceProxy {
 
     void update(Comment comment);
 
-    void delete(Long userId);
+    void delete(Long id);
 
     Comment get(Long id);
+    void deleteAllByPostId(Long id);
 }

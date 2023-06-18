@@ -32,8 +32,8 @@ public class CommentRestController {
     }
     @PostMapping(value= "/comment/", consumes = "application/json")
     public ResponseEntity<?> add(@RequestBody Comment comment) {
-        Comment response = commentService.add(comment);
-        return new ResponseEntity<>(response.getId(), HttpStatus.OK);
+        Long response = commentService.add(comment);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
     @PostMapping(value= "/comment/{id}", consumes = "application/json")
     public Comment update(@RequestBody Comment comment,@PathVariable Long id) {
@@ -47,4 +47,9 @@ public class CommentRestController {
         commentService.delete(id);
     }
 
+    @DeleteMapping("/comment/post/{id}")
+    public void deleteAllByPostId(@PathVariable Long id) {
+
+        commentService.deleteAllByPostId(id);
+    }
 }
