@@ -28,18 +28,12 @@ public class CommentServiceProxy implements ICommentServiceProxy {
         this.commentUrl = baseUrl + "/comment/{id}";
         this.pplUrl = baseUrl + "/comment/";
     }
-
     @Override
 
     public Comment get(Long id) {
+
         return restTemplate.getForObject(commentUrl, Comment.class, id);
     }
-
-    @Override
-    public void deleteAllByPostId(Long id) {
-        restTemplate.delete(baseUrl + "/comment/post/{id}", id);
-    }
-
     @Override
     public List<Comment> getAll() {
         ResponseEntity<List<Comment>> response =
@@ -48,7 +42,6 @@ public class CommentServiceProxy implements ICommentServiceProxy {
                         });
         return response.getBody();
     }
-
     @Override
     public Long add(Comment p) {
         URI uri = restTemplate.postForLocation(pplUrl, p);
@@ -70,5 +63,11 @@ public class CommentServiceProxy implements ICommentServiceProxy {
     public void delete(Long id) {
 
         restTemplate.delete(commentUrl, id);
+    }
+
+    @Override
+    public void deleteAllByPostId(Long id) {
+
+        restTemplate.delete(baseUrl + "/comment/post/{id}", id);
     }
 }
