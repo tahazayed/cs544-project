@@ -1,12 +1,10 @@
-package cs544.service;
+package cs544.client;
 
 import cs544.model.Post;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
@@ -15,7 +13,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Service
-public class PostServiceProxy implements IPostService {
+public class PostServiceProxy implements IPostServiceProxy {
 
 
     //private RestTemplate restTemplate;

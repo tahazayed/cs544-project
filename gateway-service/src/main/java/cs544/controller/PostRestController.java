@@ -1,13 +1,12 @@
 package cs544.controller;
 
+import cs544.client.IPostServiceProxy;
 import cs544.model.Post;
-import cs544.service.PostServiceProxy;
+import cs544.service.IPostService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
@@ -15,8 +14,10 @@ import java.util.List;
 @RequestMapping("/api")
 public class PostRestController {
 
-    @Autowired
-    private PostServiceProxy postService;
+    private final IPostService postService;
+    public PostRestController(@Autowired IPostService postService) {
+        this.postService = postService;
+    }
 
     @GetMapping(value = "/post/",produces = "application/json")
     public List<Post> getAll(){
@@ -27,8 +28,6 @@ public class PostRestController {
     public Post get(@PathVariable long id){
         return postService.get(id);
     }
-
-
 
     @PostMapping(value = "/post/", consumes = "application/json")
     public ResponseEntity<?> add(@RequestBody Post post) {

@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d907159-c707-494a-8b3f-cff3b3097d03" name="Changes" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/controller/CommentRestController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/model/Comment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/CommentDao.java" afterDir="false" />
@@ -14,6 +15,14 @@
       <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/controller/CommentRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/controller/CommentRestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/model/Comment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/cs544/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/cs544/service/CommentService.java" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/client/IPostServiceProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/controller/PostRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/controller/PostRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/IPostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/IPostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/PostServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/client/PostServiceProxy.java" afterDir="false" />
+>>>>>>> 3b4b51e20facab1d3e90fd38a36703775c3389e7
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,12 +59,19 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+<<<<<<< HEAD
     "last_opened_file_path": "/Users/sandraluwedde/Desktop/cs544/exercises/cs544-project",
+=======
+>>>>>>> 3b4b51e20facab1d3e90fd38a36703775c3389e7
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+<<<<<<< HEAD
     "spring.configuration.checksum": "7fc6022a5b7d1ab6c582e8353409621f",
+=======
+    "spring.configuration.checksum": "1875277d888184f0657bf8fe2bb7fad7",
+>>>>>>> 3b4b51e20facab1d3e90fd38a36703775c3389e7
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -125,7 +141,11 @@
       <option name="presentableId" value="Default" />
       <updated>1687049191335</updated>
       <workItem from="1687049193575" duration="295000" />
+<<<<<<< HEAD
       <workItem from="1687051266307" duration="3379000" />
+=======
+      <workItem from="1687051990927" duration="598000" />
+>>>>>>> 3b4b51e20facab1d3e90fd38a36703775c3389e7
     </task>
     <servers />
   </component>
