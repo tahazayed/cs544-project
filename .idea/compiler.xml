@@ -13,6 +13,7 @@
         <module name="gateway-service" />
         <module name="vote-service" />
         <module name="W3D3-REST" />
+        <module name="demo" />
       </profile>
     </annotationProcessing>
   </component>
@@ -22,6 +23,7 @@
       <module name="W3D3-REST" options="-parameters" />
       <module name="comment-service" options="-parameters" />
       <module name="comments-service" options="-parameters" />
+      <module name="demo" options="-parameters" />
       <module name="gateway-service" options="-parameters" />
       <module name="post-service" options="-parameters" />
       <module name="vote-service" options="-parameters" />
