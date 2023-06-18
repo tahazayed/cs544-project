@@ -5,7 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d907159-c707-494a-8b3f-cff3b3097d03" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/cs544/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vote-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/vote-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vote-service/new.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vote-service/new.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vote-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/vote-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +151,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1687049191335</updated>
-      <workItem from="1687061901567" duration="3235000" />
+      <workItem from="1687061901567" duration="5670000" />
     </task>
     <servers />
   </component>

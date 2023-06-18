@@ -35,7 +35,7 @@ services:
     ports:
       - "8083:8083"
     networks:
-      - blog-mysql
+      - blog-mysql   
     depends_on:
       - post-service
 
@@ -60,5 +60,4 @@ services:
 networks:
   blog-mysql:
   
-volumes:
-  dbdata:
+

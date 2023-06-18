@@ -1,6 +1,6 @@
 docker network create blog-mysql
 
-docker container run --name mysqldb --network blog-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=bootdb -d mysql:5.7
+docker container run --name mysqldb --network blog-mysql -v /tmp/mysql:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=bootdb -d mysql:5.7
 
 docker build --build-arg JAR_FILE=target/vote-service-1.0-SNAPSHOT.jar -t vote-service .
 
