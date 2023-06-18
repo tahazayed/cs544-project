@@ -1,5 +1,6 @@
 package cs544.service;
 
+import cs544.client.ICommentServiceProxy;
 import cs544.client.IPostServiceProxy;
 import cs544.client.IVoteServiceProxy;
 import cs544.model.Post;
@@ -15,9 +16,14 @@ public class PostService implements IPostService {
     private final IPostServiceProxy postServiceProxy;
     private final IVoteServiceProxy voteServiceProxy;
 
-    public PostService(@Autowired IPostServiceProxy postServiceProxy, @Autowired IVoteServiceProxy voteServiceProxy) {
+    private final ICommentServiceProxy commentServiceProxy;
+
+    public PostService(@Autowired IPostServiceProxy postServiceProxy,
+                       @Autowired IVoteServiceProxy voteServiceProxy,
+                       @Autowired ICommentServiceProxy commentServiceProxy) {
         this.postServiceProxy = postServiceProxy;
         this.voteServiceProxy = voteServiceProxy;
+        this.commentServiceProxy = commentServiceProxy;
     }
 
     @Override
@@ -25,7 +31,6 @@ public class PostService implements IPostService {
 
         return postServiceProxy.getAll();
     }
-
     @Override
     public Long add(Post post) {
 
@@ -37,16 +42,15 @@ public class PostService implements IPostService {
 
         postServiceProxy.update(post);
     }
-
     @Override
     public Post get(Long id) {
 
         return postServiceProxy.get(id);
     }
-
     @Override
     public void delete(Long id) {
         postServiceProxy.delete(id);
+        commentServiceProxy.deleteAllByPostId(id);
         voteServiceProxy.deleteAllByPostId(id);
     }
 }
