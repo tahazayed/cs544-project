@@ -7,7 +7,7 @@ import java.util.List;
 public interface ICommentService {
     List<Comment> getAll();
 
-    List<Comment>
+    // List<Comment>
     Long add(Comment comment);
 
     void update(Comment comment);
