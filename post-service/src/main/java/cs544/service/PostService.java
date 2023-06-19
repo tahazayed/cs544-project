@@ -16,22 +16,27 @@ public class PostService implements IPostService {
     @Autowired
     private IPostDao iPostDao;
     public List<Post> getAll(){
+
         return iPostDao.findAll();
     }
 
     public Post add(Post post){
+        post.generateDate();
         return iPostDao.save(post);
     }
 
     public Post update(Post post){
+        post.generateDate();
         return iPostDao.save(post);
     }
 
     public Post get(Long id){
+
         return iPostDao.findById(id).get();
     }
 
     public void delete(Long id){
+
         iPostDao.deleteById(id);
     }
 

@@ -35,14 +35,12 @@ public class PostRestController {
     @PostMapping(value = "/post/", consumes = "application/json")
     public ResponseEntity<?> add(@RequestBody Post post) {
         Long response = postService.add(post);
-        post.generateDate();
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @PutMapping(value = "/post/{id}", consumes = "application/json")
     public ResponseEntity<?> update(@RequestBody Post post, @PathVariable Long id) {
         post.setId(id);
-        post.generateDate();
         postService.update(post);
         return new ResponseEntity<>("Updated Successful", HttpStatus.OK);
     }

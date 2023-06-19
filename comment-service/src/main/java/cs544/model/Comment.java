@@ -6,22 +6,24 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
+@Data
 public class Comment implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank
-    private String Name;
+    private String name;
 
     @Positive
-    private Long userid;
+    private Long userId;
     @NotBlank
     private String comment;
 
@@ -35,66 +37,17 @@ public class Comment implements Serializable {
 
     }
 
-    public Comment(String Name, Long userid, String comment) {
+    public Comment(String name, Long userId, String comment) {
         super();
-        this.Name = Name;
-        this.userid = userid;
+        this.name = name;
+        this.userId = userId;
         this.comment = comment;
-    }
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String title) {
-        this.Name = title;
-    }
-
-    public Long getUserid() {
-        return userid;
-    }
-
-    public void setUserid(Long userid) {
-        this.userid = userid;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String author) {
-        this.comment = author;
-    }
-
-
-    public LocalDateTime getDateTime() {
-        return dateTime;
-    }
-
-    public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
-    }
-
-    public Long getPostId() {
-        return postId;
-    }
-
-    public void setPostId(Long postId) {
-        this.postId = postId;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, Name, userid, comment, dateTime, postId);
+
+        return Objects.hash(id, name, userId, comment, dateTime, postId);
     }
 
     @Override
@@ -106,15 +59,15 @@ public class Comment implements Serializable {
         if (getClass() != obj.getClass())
             return false;
         Comment other = (Comment) obj;
-        if (Name == null) {
-            if (other.Name != null)
+        if (name == null) {
+            if (other.name != null)
                 return false;
-        } else if (!Name.equals(other.Name))
+        } else if (!name.equals(other.name))
             return false;
-        if (userid == null) {
-            if (other.userid != null)
+        if (userId == null) {
+            if (other.userId != null)
                 return false;
-        } else if (!userid.equals(other.userid))
+        } else if (!userId.equals(other.userId))
             return false;
         if (comment == null) {
             if (other.comment != null)
