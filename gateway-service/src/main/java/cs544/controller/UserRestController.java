@@ -1,5 +1,6 @@
 package cs544.controller;
 
+import cs544.dto.UserLoginObject;
 import cs544.model.User;
 import cs544.service.IUserService;
 
