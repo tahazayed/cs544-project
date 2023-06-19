@@ -24,7 +24,7 @@ public class AuthController {
     @Autowired
     AuthService authServ;
 
-    @PostMapping(value="")
+    @PostMapping(value="/")
     public ResponseEntity<Map<String, Object>> login(@RequestBody User user) {
         String jwtToken = authServ.authenticateUser(user);
         

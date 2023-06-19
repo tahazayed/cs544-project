@@ -20,7 +20,7 @@ import cs544.Exceptions.UserCreationException;
 import cs544.Exceptions.UserNotFoundException;
 
 @RestController
-@RequestMapping(value = "/api/users", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/api/user", produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserController {
     
     @Autowired
@@ -28,7 +28,7 @@ public class UserController {
 
     @GetMapping("")
     RedirectView redirecting() {
-        return new RedirectView("/api/users");
+        return new RedirectView("/api/user");
     }
 
     @GetMapping("/")
