@@ -27,4 +27,6 @@ replay_pid*
 
 **/tmp/**
 
-.idea/workspace.xml
+**/.idea/**
+**/*.iml
+
