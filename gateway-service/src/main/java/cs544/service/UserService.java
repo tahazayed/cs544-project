@@ -10,6 +10,7 @@ import cs544.client.IPostServiceProxy;
 import cs544.client.IUserServiceProxy;
 import cs544.client.IVoteServiceProxy;
 import cs544.dto.UserLoginObject;
+import cs544.dto.UserRegisterObject;
 import cs544.model.User;
 
 @Service
@@ -28,9 +29,8 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public Long register(User user) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'register'");
+    public User register(UserRegisterObject user) {
+        return userServiceProxy.register(user);
     }
 
     @Override

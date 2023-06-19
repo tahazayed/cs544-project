@@ -26,10 +26,7 @@ public class AuthController {
     AuthService authServ;
 
     @PostMapping(value="/")
-    public ResponseEntity<Map<String, Object>> login(@RequestBody LinkedHashMap<?,?> user) {
-        User userObjToBeAuthenticated = new User();
-        userObjToBeAuthenticated.setUsername((String)user.get("username"));
-        userObjToBeAuthenticated.setPassword((String)user.get("password"));
+    public ResponseEntity<Map<String, Object>> login(@RequestBody User userObjToBeAuthenticated) {
         String jwtToken = authServ.authenticateUser(userObjToBeAuthenticated);
         
         Map<String, Object> response = new HashMap<>();

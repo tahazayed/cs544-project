@@ -1,6 +1,7 @@
 package cs544.controller;
 
 import cs544.dto.UserLoginObject;
+import cs544.dto.UserRegisterObject;
 import cs544.model.User;
 import cs544.service.IUserService;
 
@@ -25,19 +26,25 @@ public class UserRestController {
         this.userService = userService;
     }
 
-    @PreAuthorize("hasAuthority('USER')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping(value = "/user/", produces = "application/json")
     public List<User> getAll() {
         return userService.getAll();
     }
 
-    // @RolesAllowed("USER")
     @PostMapping(value = "/user/login/", consumes = "application/json", produces = "application/json")
     public ResponseEntity<?> login(@RequestBody UserLoginObject user) {
          Map<String, Object> response = new HashMap<>();
          String token = userService.login(user);
          response.put("jwtToken", token);
         return new ResponseEntity<>(token, HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/user/", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<?> register(@RequestBody UserRegisterObject user) {
+         User createdUser = userService.register(user);
+        return new ResponseEntity<>(createdUser, HttpStatus.OK);
+
     }
 
     // @GetMapping(value = "/user/{id}",produces = "application/json")

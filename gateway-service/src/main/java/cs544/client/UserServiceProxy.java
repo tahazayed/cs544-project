@@ -18,8 +18,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import cs544.dto.UserLoginObject;
+import cs544.dto.UserRegisterObject;
 import cs544.model.Comment;
+import cs544.model.Roles;
 import cs544.model.User;
+import cs544.model.enums.ERoles;
 
 @Service
 public class UserServiceProxy implements IUserServiceProxy {
@@ -50,9 +53,16 @@ public class UserServiceProxy implements IUserServiceProxy {
     }
 
     @Override
-    public Long register(User user) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'register'");
+    public User register(UserRegisterObject user) {
+        
+        // ADDING DEFAULT USER ROLE EACH TIME
+        Roles defaultUserRole = new Roles();
+        defaultUserRole.setRole(ERoles.USER);
+        List<Roles> roles = user.getRoles();
+        roles.add(defaultUserRole);
+
+        User createdUser = restTemplate.postForObject(pplUrl, user,User.class);
+        return createdUser;
     }
 
     @Override
