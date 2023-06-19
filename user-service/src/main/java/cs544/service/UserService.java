@@ -1,18 +1,18 @@
-package cs544.Services;
+package cs544.service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 
-import cs544.Models.Roles;
-import cs544.Models.User;
+import cs544.models.Roles;
+import cs544.models.User;
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import cs544.Daos.IUserDao;
+import cs544.daos.IUserDao;
 
 @Service
 public class UserService {

@@ -1,11 +1,11 @@
-// package cs544.Configuration;
+// package cs544.configuration;
 
-// import cs544.Configuration.Filters.JwtFilter;
+// import cs544.configuration.Filters.JwtFilter;
 // import org.springframework.boot.web.servlet.FilterRegistrationBean;
 // import org.springframework.context.annotation.Bean;
-// import org.springframework.context.annotation.Configuration;
+// import org.springframework.context.annotation.configuration;
 
-// @Configuration
+// @configuration
 // public class FilterConfig {
 //     @Bean
 //     public FilterRegistrationBean jwtFilter() {
