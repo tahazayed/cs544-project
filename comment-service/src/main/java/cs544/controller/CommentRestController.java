@@ -1,5 +1,6 @@
 package cs544.controller;
 
+import cs544.dto.CommentCreationObject;
 import cs544.model.Comment;
 import cs544.service.ICommentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,10 +32,16 @@ public class CommentRestController {
         return new ResponseEntity<>(comment, HttpStatus.OK);
     }
     @PostMapping(value= "/comment/", consumes = "application/json")
-    public ResponseEntity<?> add(@RequestBody Comment comment) {
+    public ResponseEntity<?> add(@RequestBody CommentCreationObject commentCreationObject) {
+        Comment comment = new Comment();
+        comment.setName(commentCreationObject.getName());
+        comment.setUserId(commentCreationObject.getUserId());
+        comment.setComment(commentCreationObject.getComment());
+        comment.setPostId(commentCreationObject.getPostId());
         Long response = commentService.add(comment);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
     @PostMapping(value= "/comment/{id}", consumes = "application/json")
     public Comment update(@RequestBody Comment comment,@PathVariable Long id) {
         comment.setId(id);
