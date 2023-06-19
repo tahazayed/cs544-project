@@ -1,38 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CompilerConfiguration">
-    <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="comments-service" />
-        <module name="comment-service" />
-        <module name="post-service" />
-        <module name="VOTE" />
-        <module name="gateway-service" />
-        <module name="vote-service" />
-        <module name="W3D3-REST" />
-        <module name="user-service" />
-      </profile>
-    </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="cs544-project-microservices" target="1.5" />
-      <module name="demo" target="17" />
-    </bytecodeTargetLevel>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="VOTE" options="-parameters" />
-      <module name="W3D3-REST" options="-parameters" />
-      <module name="comment-service" options="" />
-      <module name="comments-service" options="-parameters" />
-      <module name="demo" options="-parameters" />
-      <module name="gateway-service" options="" />
-      <module name="post-service" options="" />
-      <module name="user-service" options="" />
-      <module name="vote-service" options="" />
-    </option>
-  </component>
+	<component name="CompilerConfiguration">
+		<annotationProcessing>
+			<profile default="true" name="Default" enabled="true"/>
+			<profile name="Maven default annotation processors profile" enabled="true">
+				<sourceOutputDir name="target/generated-sources/annotations"/>
+				<sourceTestOutputDir name="target/generated-test-sources/test-annotations"/>
+				<outputRelativeToContentRoot value="true"/>
+				<module name="comment-service"/>
+				<module name="post-service"/>
+				<module name="gateway-service"/>
+				<module name="vote-service"/>
+				<module name="user-service"/>
+			</profile>
+		</annotationProcessing>
+		<bytecodeTargetLevel>
+			<module name="BlogSystem" target="17"/>
+		</bytecodeTargetLevel>
+	</component>
+	<component name="JavacSettings">
+		<option name="ADDITIONAL_OPTIONS_OVERRIDE">
+			<module name="comment-service" options=""/>
+			<module name="gateway-service" options=""/>
+			<module name="post-service" options=""/>
+			<module name="user-service" options=""/>
+			<module name="vote-service" options=""/>
+		</option>
+	</component>
 </project>
