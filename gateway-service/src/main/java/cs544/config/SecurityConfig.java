@@ -76,6 +76,7 @@ public class SecurityConfig {
         http.csrf().disable();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.authorizeHttpRequests()
+                .requestMatchers("/api/user/login/").permitAll()
 //                .requestMatchers("/swagger/**").permitAll()
 //                .requestMatchers("/swagger-ui/**").permitAll()
                 // .requestMatchers("/api/user/").permitAll()
