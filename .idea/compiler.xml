@@ -18,6 +18,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cs544-project-microservices" target="1.5" />
       <module name="demo" target="17" />
     </bytecodeTargetLevel>
   </component>
@@ -25,13 +26,13 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="VOTE" options="-parameters" />
       <module name="W3D3-REST" options="-parameters" />
-      <module name="comment-service" options="-parameters" />
+      <module name="comment-service" options="" />
       <module name="comments-service" options="-parameters" />
       <module name="demo" options="-parameters" />
-      <module name="gateway-service" options="-parameters" />
-      <module name="post-service" options="-parameters" />
-      <module name="user-service" options="-parameters" />
-      <module name="vote-service" options="-parameters" />
+      <module name="gateway-service" options="" />
+      <module name="post-service" options="" />
+      <module name="user-service" options="" />
+      <module name="vote-service" options="" />
     </option>
   </component>
 </project>

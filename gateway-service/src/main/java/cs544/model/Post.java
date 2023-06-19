@@ -16,7 +16,7 @@ public class Post {
     private String description;
     @NotBlank
     private String content;
-    private Integer userid;
+    private Long userId;
     private Date creation;
 
     public Post() {

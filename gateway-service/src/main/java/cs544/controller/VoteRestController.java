@@ -26,24 +26,28 @@ public class VoteRestController {
         this.voteServiceProxy = voteServiceProxy;
     }
 
+    @PreAuthorize("hasAuthority('USER')")
     @GetMapping(value = "/votes/", produces = "application/json")
     public List<Vote> getAll() {
 
         return voteServiceProxy.getAll();
     }
 
+    @PreAuthorize("hasAuthority('USER')")
     @GetMapping(value = "/votes/post/{id}", produces = "application/json")
     public List<Vote> getAllByPostId(@PathVariable Long id) {
 
         return voteServiceProxy.getAllByPostId(id);
     }
 
+    @PreAuthorize("hasAuthority('USER')")
     @GetMapping(value = "/votes/comment/{id}", produces = "application/json")
     public List<Vote> getAllByCommentId(@PathVariable Long id) {
 
         return voteServiceProxy.getAllByCommentId(id);
     }
 
+    @PreAuthorize("hasAuthority('USER')")
     @GetMapping(value = "/votes/{id}", produces = "application/json")
     public Vote get(@PathVariable Long id) {
 
@@ -57,32 +61,34 @@ public class VoteRestController {
         if (authentication != null && authentication.isAuthenticated()) {
             String userId = authentication.getName();
             voteCreationObject.setUserId(Long.parseLong(userId));
-        }
-        else {
+        } else {
             throw new ResponseStatusException(
-                    HttpStatus.FORBIDDEN, "entity not found"
+                    HttpStatus.FORBIDDEN, "Access Denied"
             );
         }
         Long response = voteServiceProxy.add(voteCreationObject);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @DeleteMapping("/votes/{id}")
-    public ResponseEntity<String> delete(@PathVariable Long id) {
-        voteServiceProxy.delete(id);
-        return new ResponseEntity<>("Vote entity deleted successfully.", HttpStatus.OK);
-    }
+//    @PreAuthorize("hasAuthority('USER')")
+//    @DeleteMapping("/votes/{id}")
+//    public ResponseEntity<String> delete(@PathVariable Long id) {
+//        voteServiceProxy.delete(id);
+//        return new ResponseEntity<>("Vote entity deleted successfully.", HttpStatus.OK);
+//    }
 
-    @DeleteMapping("/votes/post/{id}")
-    public ResponseEntity<String> deleteAllByPostId(@PathVariable Long id) {
-        voteServiceProxy.deleteAllByPostId(id);
-        return new ResponseEntity<>("Vote entity deleted successfully.", HttpStatus.OK);
-    }
+//    @PreAuthorize("hasAuthority('ADMIN')")
+//    @DeleteMapping("/votes/post/{id}")
+//    public ResponseEntity<String> deleteAllByPostId(@PathVariable Long id) {
+//        voteServiceProxy.deleteAllByPostId(id);
+//        return new ResponseEntity<>("Vote entity deleted successfully.", HttpStatus.OK);
+//    }
 
-    @DeleteMapping("/votes/comment/{id}")
-    public ResponseEntity<String> deleteAllByCommentId(@PathVariable Long id) {
-        voteServiceProxy.deleteAllByCommentId(id);
-        return new ResponseEntity<>("Vote entity deleted successfully.", HttpStatus.OK);
-    }
+//    @PreAuthorize("hasAuthority('ADMIN')")
+//    @DeleteMapping("/votes/comment/{id}")
+//    public ResponseEntity<String> deleteAllByCommentId(@PathVariable Long id) {
+//        voteServiceProxy.deleteAllByCommentId(id);
+//        return new ResponseEntity<>("Vote entity deleted successfully.", HttpStatus.OK);
+//    }
 
 }
