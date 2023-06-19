@@ -9,6 +9,7 @@ import cs544.client.ICommentServiceProxy;
 import cs544.client.IPostServiceProxy;
 import cs544.client.IUserServiceProxy;
 import cs544.client.IVoteServiceProxy;
+import cs544.dto.UserLoginObject;
 import cs544.model.User;
 
 @Service
@@ -39,7 +40,7 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public User login(User user) {
+    public String login(UserLoginObject user) {
         return userServiceProxy.login(user);       
     }
 

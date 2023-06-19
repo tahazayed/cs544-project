@@ -1,6 +1,7 @@
 package cs544.client;
 
 import java.net.URI;
+// import java.net.http.HttpHeaders;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -8,11 +9,15 @@ import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.core.env.ConfigurableEnvironment;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import cs544.dto.UserLoginObject;
 import cs544.model.Comment;
 import cs544.model.User;
 
@@ -56,16 +61,12 @@ public class UserServiceProxy implements IUserServiceProxy {
     }
 
     @Override
-    public User login(User user) {
-        Object createdUser = restTemplate.postForObject(loginUrl, user, Object.class);
-
-        URI uri = restTemplate.postForLocation(loginUrl, user);
-        if (uri == null) {
-            return null;
-        }
-        Matcher m = Pattern.compile(".*/post/(\\d+)").matcher(uri.getPath());
-        m.matches();
-        return null;
+    public String login(UserLoginObject myUser) {
+        String token = restTemplate.postForObject(loginUrl, myUser,String.class);
+        
+        // Matcher m = Pattern.compile(".*/post/(\\d+)").matcher(uri.getPath());
+        // m.matches();
+        return token;
         
     }
     

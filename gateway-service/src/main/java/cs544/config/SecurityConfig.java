@@ -70,7 +70,7 @@ public class SecurityConfig {
         http.csrf().disable();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.authorizeHttpRequests()
-                // .requestMatchers("/api/user/").permitAll()
+                .requestMatchers("/api/user/login/").permitAll()
                 // .antMatchers("/login/authenticate", "/members", "/users").permitAll()
                 // .antMatchers("/login/authenticate", "/members", "/users").permitAll()
                 // .requestMatchers(HttpMethod.POST, "/api/user/**").hasAnyAuthority("ADMIN")

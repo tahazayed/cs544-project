@@ -1,6 +1,7 @@
 package cs544.controller;
 
 import cs544.client.IPostServiceProxy;
+import cs544.dto.UserLoginObject;
 import cs544.model.Post;
 import cs544.model.User;
 import cs544.service.IPostService;
@@ -13,7 +14,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
@@ -32,12 +35,12 @@ public class UserRestController {
     }
 
     // @RolesAllowed("USER")
-    @PostMapping(value = "/user/login/", consumes = "application/json")
-    public ResponseEntity<?> login(@RequestBody User user) {
-        userService.login(user);
-        // user.generateDate();
-        // return new ResponseEntity<>(response, HttpStatus.OK);
-        return new ResponseEntity<>(null, HttpStatus.OK);
+    @PostMapping(value = "/user/login/", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<?> login(@RequestBody UserLoginObject user) {
+         Map<String, Object> response = new HashMap<>();
+         String token = userService.login(user);
+         response.put("jwtToken", token);
+        return new ResponseEntity<>(token, HttpStatus.OK);
     }
 
     // @GetMapping(value = "/user/{id}",produces = "application/json")

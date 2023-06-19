@@ -3,10 +3,14 @@ package cs544.Controllers;
 import cs544.Models.User;
 import cs544.Services.AuthService;
 import cs544.Services.UserService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +29,11 @@ public class AuthController {
     AuthService authServ;
 
     @PostMapping(value="/")
-    public ResponseEntity<Map<String, Object>> login(@RequestBody User user) {
-        String jwtToken = authServ.authenticateUser(user);
+    public ResponseEntity<Map<String, Object>> login(@RequestBody LinkedHashMap<?,?> user) {
+        User userObjToBeAuthenticated = new User();
+        userObjToBeAuthenticated.setUsername((String)user.get("username"));
+        userObjToBeAuthenticated.setPassword((String)user.get("password"));
+        String jwtToken = authServ.authenticateUser(userObjToBeAuthenticated);
         
         Map<String, Object> response = new HashMap<>();
         response.put("jwtToken", jwtToken);
