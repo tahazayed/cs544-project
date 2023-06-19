@@ -14,10 +14,12 @@
 		<module>user-service</module>
 		<module>vote-service</module>
 	</modules>
-	<properties>
-		<java.version>17</java.version>
-		<spring-cloud.version>2020.0.3</spring-cloud.version>
-	</properties>
+    <properties>
+        <java.version>17</java.version>
+        <spring-cloud.version>2020.0.3</spring-cloud.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

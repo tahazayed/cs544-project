@@ -5,54 +5,17 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
+import lombok.Data;
 
 import java.io.Serial;
 import java.io.Serializable;
 
+@Data
 public class VoteCreationObject implements Serializable {
     @Serial
     private static final long serialVersionUID = -36048901595541303L;
 
-    public VoteCreationObject(Long userId, Long commentId, VoteOptions vote, Long postId) {
-        this.userId = userId;
-        this.commentId = commentId;
-        this.vote = vote;
-        this.postId = postId;
-    }
-
     public VoteCreationObject() {
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public Long getCommentId() {
-        return commentId;
-    }
-
-    public void setCommentId(Long commentId) {
-        this.commentId = commentId;
-    }
-
-    public VoteOptions getVote() {
-        return vote;
-    }
-
-    public void setVote(VoteOptions vote) {
-        this.vote = vote;
-    }
-
-    public Long getPostId() {
-        return postId;
-    }
-
-    public void setPostId(Long postId) {
-        this.postId = postId;
     }
 
     @NotNull

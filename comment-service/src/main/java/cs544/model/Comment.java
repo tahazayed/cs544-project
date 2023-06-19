@@ -1,9 +1,6 @@
 package cs544.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 import lombok.Data;
@@ -33,16 +30,13 @@ public class Comment implements Serializable {
     @Positive
     private Long postId;
 
+    @Version
+    private int version;
+
     public Comment() {
 
     }
 
-    public Comment(String name, Long userId, String comment) {
-        super();
-        this.name = name;
-        this.userId = userId;
-        this.comment = comment;
-    }
 
     @Override
     public int hashCode() {
