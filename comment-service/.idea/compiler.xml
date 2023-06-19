@@ -25,7 +25,7 @@
       <module name="W3D2-VAL" options="-endorseddirs D:\CS544\exercises\W3D2-VAL\target/endorsed" />
       <module name="W3D3-Boot" options="-parameters" />
       <module name="W3D3-REST" options="-parameters" />
-      <module name="comment-service" options="-parameters" />
+      <module name="comment-service" options="" />
       <module name="comments-service" options="-parameters" />
     </option>
   </component>

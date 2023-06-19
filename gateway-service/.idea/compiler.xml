@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -27,7 +28,7 @@
       <module name="W3D2-VAL" options="-endorseddirs D:\CS544\exercises\W3D2-VAL\target/endorsed" />
       <module name="W3D3-Boot" options="-parameters" />
       <module name="W3D3-REST" options="-parameters" />
-      <module name="gateway-service" options="-parameters" />
+      <module name="gateway-service" options="" />
       <module name="post-service" options="-parameters" />
     </option>
   </component>

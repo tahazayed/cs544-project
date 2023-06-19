@@ -1,6 +1,7 @@
 package cs544.controller;
 
 import cs544.client.IPostServiceProxy;
+import cs544.dto.PostCreationObject;
 import cs544.model.Post;
 import cs544.service.IPostService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,18 +42,18 @@ public class PostRestController {
     //TODO: Use the userId from logged in user
     @PreAuthorize("hasAuthority('USER')")
     @PostMapping(value = "/post/", consumes = "application/json")
-    public ResponseEntity<?> add(@RequestBody Post post) {
+    public ResponseEntity<?> add(@RequestBody PostCreationObject postCreationObject) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication != null && authentication.isAuthenticated()) {
             String userId = authentication.getName();
-            post.setUserId(Long.parseLong(userId));
+            postCreationObject.setUserId(Long.parseLong(userId));
         }
         else {
             throw new ResponseStatusException(
                     HttpStatus.FORBIDDEN, "Access Denied"
             );
         }
-        Long response = postService.add(post);
+        Long response = postService.add(postCreationObject);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 

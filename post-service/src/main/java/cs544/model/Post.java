@@ -2,6 +2,8 @@ package cs544.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -24,7 +26,10 @@ public class Post implements Serializable {
     @NotBlank
     @Lob
     private String content;
-    private Long userid;
+    @NotNull
+    @Positive
+    private Long userId;
+
     private Date creation;
 
     @Version

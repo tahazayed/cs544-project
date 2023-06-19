@@ -1,5 +1,6 @@
 package cs544.client;
 
+import cs544.dto.PostCreationObject;
 import cs544.model.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
@@ -44,7 +45,7 @@ public class PostServiceProxy implements IPostServiceProxy {
     }
 
     @Override
-    public Long add(Post p) {
+    public Long add(PostCreationObject p) {
         URI uri = restTemplate.postForLocation(pplUrl, p);
         if (uri == null) {
             return null;
