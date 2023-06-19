@@ -1,11 +1,13 @@
 package cs544.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
 
 @Entity
 @Table(name="categories")
+@Data
 public class Category {
 
     @Id
@@ -13,8 +15,5 @@ public class Category {
     private Long id;
     private String name;
     private String descriptions;
-
-//    @OneToMany(mappedBy = "category")
-//    private List<Post> posts;
 
 }
