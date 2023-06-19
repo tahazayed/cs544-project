@@ -24,7 +24,6 @@ public class Comment implements Serializable {
     @NotBlank
     private String comment;
 
-
     private LocalDateTime dateTime;
 
     @Positive
