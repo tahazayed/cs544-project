@@ -1,5 +1,6 @@
 package cs544.controller;
 
+import cs544.dto.PostCreationObject;
 import cs544.model.Post;
 import cs544.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,19 @@ public class PostRestController {
     }
 
     @PostMapping(value = "/post/", consumes = "application/json")
-    public ResponseEntity<Post> add(@RequestBody Post post) {
+//    public ResponseEntity<Post> add(@RequestBody Post post) {
+//        Post response = postService.add(post);
+//        post.generateDate();
+//        return new ResponseEntity<>(response, HttpStatus.OK);
+//    }
+
+    public ResponseEntity<Post> add(@RequestBody PostCreationObject postCreationObject) {
+
+        Post post = new Post();
+        post.setTitle(postCreationObject.getTitle());
+        post.setContent(postCreationObject.getContent());
+        post.setDescription(postCreationObject.getDescription());
+        post.setUserId(postCreationObject.getUserId());
         Post response = postService.add(post);
         post.generateDate();
         return new ResponseEntity<>(response, HttpStatus.OK);

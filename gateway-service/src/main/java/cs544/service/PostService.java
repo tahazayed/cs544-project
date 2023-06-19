@@ -3,6 +3,7 @@ package cs544.service;
 import cs544.client.ICommentServiceProxy;
 import cs544.client.IPostServiceProxy;
 import cs544.client.IVoteServiceProxy;
+import cs544.dto.PostCreationObject;
 import cs544.model.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,7 +33,7 @@ public class PostService implements IPostService {
         return postServiceProxy.getAll();
     }
     @Override
-    public Long add(Post post) {
+    public Long add(PostCreationObject post) {
 
         return postServiceProxy.add(post);
     }
