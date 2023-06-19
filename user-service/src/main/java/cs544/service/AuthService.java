@@ -1,18 +1,18 @@
-package cs544.Services;
+package cs544.service;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import cs544.Models.User;
+import cs544.models.User;
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import cs544.Daos.IUserDao;
-import cs544.Exceptions.UserNotFoundException;
-import cs544.HelperFunctions.JwtUtils;
+import cs544.daos.IUserDao;
+import cs544.exceptions.UserNotFoundException;
+import cs544.helperFunctions.JwtUtils;
 
 @Service
 public class AuthService {

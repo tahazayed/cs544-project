@@ -1,11 +1,8 @@
-package cs544.Controllers;
+package cs544.controller;
 
-import cs544.Models.User;
-import cs544.Services.AuthService;
-import cs544.Services.UserService;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-
+import cs544.models.User;
+import cs544.service.AuthService;
+import cs544.service.UserService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

@@ -27,17 +27,13 @@ public class Post implements Serializable {
     private Long userid;
     private Date creation;
 
+    @Version
+    private int version;
+
     public Post() {
 
     }
 
-    public Post(String title, String description, String content, Long userid) {
-        super();
-        this.title = title;
-        this.description = description;
-        this.content = content;
-        this.userid = userid;
-    }
 
     @PrePersist
     public void generateDate() {

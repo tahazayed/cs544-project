@@ -1,12 +1,7 @@
 package cs544.controller;
 
-import cs544.client.IPostServiceProxy;
-import cs544.dto.UserLoginObject;
-import cs544.model.Post;
 import cs544.model.User;
-import cs544.service.IPostService;
 import cs544.service.IUserService;
-import jakarta.annotation.security.RolesAllowed;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,14 +18,15 @@ import java.util.Map;
 public class UserRestController {
 
     private final IUserService userService;
+
     public UserRestController(@Autowired IUserService userService) {
 
         this.userService = userService;
     }
 
     @PreAuthorize("hasAuthority('USER')")
-    @GetMapping(value = "/user/",produces = "application/json")
-    public List<User> getAll(){
+    @GetMapping(value = "/user/", produces = "application/json")
+    public List<User> getAll() {
         return userService.getAll();
     }
 
@@ -48,7 +44,6 @@ public class UserRestController {
 
     //     return postService.get(id);
     // }
-
 
 
     // @PutMapping(value = "/user/{id}", consumes = "application/json")

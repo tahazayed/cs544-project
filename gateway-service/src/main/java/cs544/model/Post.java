@@ -16,18 +16,10 @@ public class Post {
     private String description;
     @NotBlank
     private String content;
-    private Integer userid;
+    private Long userId;
     private Date creation;
 
     public Post() {
 
     }
-    public Post(String title,String description,String content,Integer userid){
-        super();
-        this.title = title;
-        this.description = description;
-        this.content = content;
-        this.userid = userid;
-    }
-
 }

@@ -1,9 +1,9 @@
-package cs544.HelperFunctions;
+package cs544.helperFunctions;
 
 import java.util.Date;
 import java.util.Map;
 
-import cs544.Models.User;
+import cs544.models.User;
 import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Claims;
