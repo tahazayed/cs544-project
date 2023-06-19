@@ -24,7 +24,7 @@ public class CommentServiceProxy implements ICommentServiceProxy {
     @Autowired
     public CommentServiceProxy(ConfigurableEnvironment env) {
         this.env = env;
-        this.baseUrl = System.getProperty("comment.base.url");
+        this.baseUrl = env.getProperty("comment.base.url");
         this.commentUrl = baseUrl + "/comment/{id}";
         this.pplUrl = baseUrl + "/comment/";
     }
