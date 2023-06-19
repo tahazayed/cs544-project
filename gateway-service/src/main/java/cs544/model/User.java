@@ -2,8 +2,13 @@ package cs544.model;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -22,7 +27,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
-public class User {
+public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -74,7 +79,11 @@ public class User {
     }
 
     public String getUsername() {
-        return username;
+        if(this.getId() != null)
+            return this.getId().toString();
+        else   
+            return null;
+        // return this.getId().toString();
     }
 
     public void setUsername(String username) {
@@ -115,6 +124,35 @@ public class User {
     public String toString() {
         return "User [id=" + id + ", username=" + username + ", creation_date=" + creation_date + ", password=" +
             password + ", email=" + email + "]";
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+        for (Roles role : roles) {
+            authorities.add(new SimpleGrantedAuthority(role.getRole().name()));
+        }
+        return authorities;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
 
 
