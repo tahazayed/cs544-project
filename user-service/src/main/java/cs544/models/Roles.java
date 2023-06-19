@@ -1,6 +1,6 @@
-package cs544.Models;
+package cs544.models;
 
-import cs544.Models.enums.ERoles;
+import cs544.models.enums.ERoles;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Entity;

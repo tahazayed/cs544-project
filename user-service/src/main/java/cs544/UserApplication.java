@@ -5,17 +5,17 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import cs544.Daos.IUserDao;
-import cs544.Models.User;
-import cs544.Services.UserService;
+import cs544.daos.IUserDao;
+import cs544.models.User;
+import cs544.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import cs544.Daos.IRoleDao;
-import cs544.Models.Roles;
-import cs544.Models.enums.ERoles;
+import cs544.daos.IRoleDao;
+import cs544.models.Roles;
+import cs544.models.enums.ERoles;
 
 
 

@@ -1,4 +1,4 @@
-package cs544.Exceptions;
+package cs544.exceptions;
 
 public class UserCreationException extends RuntimeException {
     public UserCreationException() {

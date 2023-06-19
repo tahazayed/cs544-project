@@ -1,8 +1,8 @@
-package cs544.Daos;
+package cs544.daos;
 
 import java.util.Optional;
 
-import cs544.Models.User;
+import cs544.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

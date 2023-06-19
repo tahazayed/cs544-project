@@ -1,11 +1,11 @@
-package cs544.Services;
+package cs544.service;
 
-import cs544.Daos.IRoleDao;
-import cs544.Models.Roles;
+import cs544.daos.IRoleDao;
+import cs544.models.Roles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import cs544.Models.enums.ERoles;
+import cs544.models.enums.ERoles;
 
 @Service
 public class RolesService {
