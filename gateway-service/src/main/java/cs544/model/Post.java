@@ -22,12 +22,4 @@ public class Post {
     public Post() {
 
     }
-    public Post(String title,String description,String content,Integer userid){
-        super();
-        this.title = title;
-        this.description = description;
-        this.content = content;
-        this.userid = userid;
-    }
-
 }
