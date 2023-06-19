@@ -50,7 +50,7 @@ public class VoteRestController {
     @PostMapping(value = "/vote/", consumes = "application/json")
     public RedirectView add(@RequestBody VoteCreationObject voteCreationObject) {
         Vote vote = new Vote();
-        vote.setUserId(voteCreationObject.getUserId();
+        vote.setUserId(voteCreationObject.getUserId());
         vote.setCommentId(voteCreationObject.getCommentId());
         vote.setVote(voteCreationObject.getVote());
         vote.setPostId(voteCreationObject.getPostId());
