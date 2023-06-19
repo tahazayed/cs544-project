@@ -75,6 +75,9 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<executions>
 					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
 						<configuration>
 							<mainClass>cs544.PostApplication</mainClass>
 						</configuration>

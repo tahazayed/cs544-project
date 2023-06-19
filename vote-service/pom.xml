@@ -85,9 +85,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>3.0.4</version>
 				<executions>
 					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
 						<configuration>
 							<mainClass>cs544.VoteApplication</mainClass>
 						</configuration>
@@ -103,7 +105,6 @@
 						<id>default</id>
 						<goals>
 							<goal>build</goal>
-							
 						</goals>
 					</execution>
 				</executions>
@@ -120,6 +121,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	<repositories>
-	</repositories>
 </project>
