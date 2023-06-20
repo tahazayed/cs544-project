@@ -22,14 +22,14 @@ public class CommentRestController {
     }
 
     @PreAuthorize("hasAuthority('USER')")
-    @GetMapping(value = "/comments/", produces = "application/json")
+    @GetMapping(value = "/comment/", produces = "application/json")
     public ResponseEntity<?> getAll() {
 
         return new ResponseEntity<>(commentService.getAll(), HttpStatus.OK);
     }
 
     @PreAuthorize("hasAuthority('USER')")
-    @GetMapping(value = "/comments/{id}", produces = "application/json")
+    @GetMapping(value = "/comment/{id}", produces = "application/json")
     public ResponseEntity<?> get(@PathVariable Long id) {
         Comment comment = commentService.get(id);
         if (comment == null) {
@@ -39,7 +39,7 @@ public class CommentRestController {
     }
 
     @PreAuthorize("hasAuthority('USER')")
-    @PostMapping(value = "/comments/", consumes = "application/json")
+    @PostMapping(value = "/comment/", consumes = "application/json")
     public ResponseEntity<?> add(@RequestBody Comment comment) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication != null && authentication.isAuthenticated()) {
@@ -55,7 +55,7 @@ public class CommentRestController {
     }
 
     @PreAuthorize("hasAuthority('USER')")
-    @PostMapping(value = "/comments/{id}", consumes = "application/json")
+    @PostMapping(value = "/comment/{id}", consumes = "application/json")
     public Comment update(@RequestBody Comment comment, @PathVariable Long id) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -87,14 +87,14 @@ public class CommentRestController {
     }
 
     @PreAuthorize("hasAuthority('USER')")
-    @DeleteMapping("/comments/{id}")
+    @DeleteMapping("/comment/{id}")
     public void delete(@PathVariable Long id) {
 
         commentService.delete(id);
     }
 
     @PreAuthorize("hasAuthority('USER')")
-    @DeleteMapping("/comments/post/{id}")
+    @DeleteMapping("/comment/post/{id}")
     public void deleteByPostId(@PathVariable Long id) {
 
         commentService.deleteAllByPostId(id);
