@@ -36,8 +36,8 @@ public class UserServiceProxy implements IUserServiceProxy {
     @Autowired
     public UserServiceProxy(ConfigurableEnvironment env) {
         this.env = env;
-        this.baseUrl = "http://localhost:8081/api";
-        // this.baseUrl = env.getProperty("user.base.url");
+        //this.baseUrl = "http://localhost:8081/api";
+        this.baseUrl = env.getProperty("user.base.url");
         this.userUrl = baseUrl + "/user/{id}";
         this.pplUrl = baseUrl + "/user/";
         this.loginUrl = baseUrl + "/oauthtoken/";
