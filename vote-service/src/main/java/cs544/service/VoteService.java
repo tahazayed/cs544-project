@@ -22,13 +22,13 @@ public class VoteService implements IVoteService {
 
     @Override
     public void add(Vote vote) {
-        var existingVote = voteDao.findFirstByUserIdAndCommentIdAndVote(vote.getUserId(),
-                vote.getCommentId(), vote.getVote());
+        var existingVote = voteDao.findFirstByUserIdAndCommentId(vote.getUserId(),
+                vote.getCommentId());
         if (existingVote == null) {
-            voteDao.save(vote);
+            vote = voteDao.save(vote);
         } else {
-            vote.setId(existingVote.getId());
-            vote.setVersion(existingVote.getVersion());
+            existingVote.setVote(vote.getVote());
+            vote = voteDao.save(existingVote);
         }
     }
 
