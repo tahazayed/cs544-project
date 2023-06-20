@@ -25,10 +25,12 @@ public class VoteService implements IVoteService {
         var existingVote = voteDao.findFirstByUserIdAndCommentId(vote.getUserId(),
                 vote.getCommentId());
         if (existingVote == null) {
-            vote = voteDao.save(vote);
+            voteDao.save(vote);
         } else {
             existingVote.setVote(vote.getVote());
-            vote = voteDao.save(existingVote);
+            voteDao.save(existingVote);
+            vote.setId(existingVote.getId());
+            vote.setVersion(existingVote.getVersion());
         }
     }
 

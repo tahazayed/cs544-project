@@ -70,7 +70,7 @@ public class VoteServiceProxy implements IVoteServiceProxy {
     @Override
     public Long add(VoteCreationObject voteCreationObject) {
         String postUrl = baseUrl + "/vote/";
-        System.out.println(postUrl);
+
         URI uri = restTemplate.postForLocation(postUrl, voteCreationObject);
         if (uri == null) { return null; }
         Matcher m = Pattern.compile(".*/vote/(\\d+)").matcher(uri.getPath());
