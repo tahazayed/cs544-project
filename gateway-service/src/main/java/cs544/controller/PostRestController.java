@@ -1,6 +1,5 @@
 package cs544.controller;
 
-import cs544.client.IPostServiceProxy;
 import cs544.dto.PostCreationObject;
 import cs544.model.Post;
 import cs544.service.IPostService;
@@ -20,21 +19,23 @@ import java.util.List;
 public class PostRestController {
 
     private final IPostService postService;
-    public PostRestController(@Autowired IPostService postService) {
+
+    @Autowired
+    public PostRestController(IPostService postService) {
 
         this.postService = postService;
     }
 
     @PreAuthorize("hasAuthority('USER')")
-    @GetMapping(value = "/post/",produces = "application/json")
-    public List<Post> getAll(){
+    @GetMapping(value = "/post/", produces = "application/json")
+    public List<Post> getAll() {
 
         return postService.getAll();
     }
 
     @PreAuthorize("hasAuthority('USER')")
-    @GetMapping(value = "/post/{id}",produces = "application/json")
-    public Post get(@PathVariable long id){
+    @GetMapping(value = "/post/{id}", produces = "application/json")
+    public Post get(@PathVariable long id) {
 
         return postService.get(id);
     }
@@ -47,8 +48,7 @@ public class PostRestController {
         if (authentication != null && authentication.isAuthenticated()) {
             String userId = authentication.getName();
             postCreationObject.setUserId(Long.parseLong(userId));
-        }
-        else {
+        } else {
             throw new ResponseStatusException(
                     HttpStatus.FORBIDDEN, "Access Denied"
             );
@@ -91,7 +91,7 @@ public class PostRestController {
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @DeleteMapping(value = "/post/{id}", produces = "application/json")
-    public ResponseEntity<String> delete(@PathVariable long id){
+    public ResponseEntity<String> delete(@PathVariable long id) {
         postService.delete(id);
         return new ResponseEntity<>("Post entity deleted successfully.", HttpStatus.OK);
     }

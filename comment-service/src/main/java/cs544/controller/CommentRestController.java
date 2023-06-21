@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public class CommentRestController {
     private final ICommentService commentService;
-    public CommentRestController(@Autowired ICommentService CommentService) {
+    @Autowired
+    public CommentRestController(ICommentService CommentService) {
         this.commentService = CommentService;
     }
 

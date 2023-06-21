@@ -16,8 +16,9 @@ public class CommentService implements ICommentService {
 
     private final IVoteServiceProxy voteServiceProxy;
 
-    public CommentService(@Autowired ICommentServiceProxy commentServiceProxy,
-                          @Autowired IVoteServiceProxy voteServiceProxy) {
+    @Autowired
+    public CommentService(ICommentServiceProxy commentServiceProxy,
+                          IVoteServiceProxy voteServiceProxy) {
         this.commentServiceProxy = commentServiceProxy;
         this.voteServiceProxy = voteServiceProxy;
     }

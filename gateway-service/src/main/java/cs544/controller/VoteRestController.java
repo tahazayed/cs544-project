@@ -22,7 +22,8 @@ public class VoteRestController {
 
     private final IVoteServiceProxy voteServiceProxy;
 
-    public VoteRestController(@Autowired IVoteServiceProxy voteServiceProxy) {
+    @Autowired
+    public VoteRestController(IVoteServiceProxy voteServiceProxy) {
         this.voteServiceProxy = voteServiceProxy;
     }
 

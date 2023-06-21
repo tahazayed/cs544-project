@@ -19,9 +19,10 @@ public class PostService implements IPostService {
 
     private final ICommentServiceProxy commentServiceProxy;
 
-    public PostService(@Autowired IPostServiceProxy postServiceProxy,
-                       @Autowired IVoteServiceProxy voteServiceProxy,
-                       @Autowired ICommentServiceProxy commentServiceProxy) {
+    @Autowired
+    public PostService(IPostServiceProxy postServiceProxy,
+                       IVoteServiceProxy voteServiceProxy,
+                       ICommentServiceProxy commentServiceProxy) {
         this.postServiceProxy = postServiceProxy;
         this.voteServiceProxy = voteServiceProxy;
         this.commentServiceProxy = commentServiceProxy;
@@ -32,6 +33,7 @@ public class PostService implements IPostService {
 
         return postServiceProxy.getAll();
     }
+
     @Override
     public Long add(PostCreationObject post) {
 
@@ -43,11 +45,13 @@ public class PostService implements IPostService {
 
         postServiceProxy.update(post);
     }
+
     @Override
     public Post get(Long id) {
 
         return postServiceProxy.get(id);
     }
+
     @Override
     public void delete(Long id) {
         postServiceProxy.delete(id);

@@ -14,7 +14,8 @@ import java.util.List;
 public class CommentService implements ICommentService {
     private final ICommentDao commentDao;
 
-    public CommentService(@Autowired ICommentDao commentDao) {
+    @Autowired
+    public CommentService(ICommentDao commentDao) {
         this.commentDao = commentDao;
     }
 

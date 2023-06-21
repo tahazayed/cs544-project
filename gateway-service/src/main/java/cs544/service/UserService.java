@@ -19,12 +19,13 @@ public class UserService implements IUserService {
 
     private final IUserServiceProxy userServiceProxy;
 
-    public UserService(@Autowired IUserServiceProxy userServiceProxy) {
+    @Autowired
+    public UserService(IUserServiceProxy userServiceProxy) {
         this.userServiceProxy = userServiceProxy;
     }
 
     @Override
-    public List < User > getAll() {
+    public List<User> getAll() {
         return userServiceProxy.getAll();
     }
 
@@ -41,7 +42,7 @@ public class UserService implements IUserService {
 
     @Override
     public String login(UserLoginObject user) {
-        return userServiceProxy.login(user);       
+        return userServiceProxy.login(user);
     }
 
 }
