@@ -227,7 +227,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImlkIjoyLCJ1c2VybmFtZSI6InVzZXIiLCJjcmVhdGlvbl9kYXRlIjoxNjg3MTMyODAwMDAwLCJlbWFpbCI6InVzZXJAbWl1LmVkdSIsInJvbGVzIjpbeyJyb2xlIjoiVVNFUiJ9XX0sImV4cCI6MTY4NzI4MDExOH0.MlUDIiVuRKobnOfW3X59J0du4Wdtyd4XBNx8vIbkLkE",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImlkIjoyLCJ1c2VybmFtZSI6InVzZXIiLCJjcmVhdGlvbl9kYXRlIjoxNjg3MzkyMDAwMDAwLCJlbWFpbCI6InVzZXJAbWl1LmVkdSIsInJvbGVzIjpbeyJyb2xlIjoiVVNFUiJ9XX0sImV4cCI6MTY4NzQwMjI4OX0.M2mNcn75vZfQ4jp_Tda-8zm3je7OsOHK54BoJNXtPi4",
 							"type": "string"
 						}
 					]
@@ -273,7 +273,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImlkIjoyLCJ1c2VybmFtZSI6InVzZXIiLCJjcmVhdGlvbl9kYXRlIjoxNjg3MTMyODAwMDAwLCJlbWFpbCI6InVzZXJAbWl1LmVkdSIsInJvbGVzIjpbeyJyb2xlIjoiVVNFUiJ9XX0sImV4cCI6MTY4NzI4MDExOH0.MlUDIiVuRKobnOfW3X59J0du4Wdtyd4XBNx8vIbkLkE",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImlkIjoyLCJ1c2VybmFtZSI6InVzZXIiLCJjcmVhdGlvbl9kYXRlIjoxNjg3MzkyMDAwMDAwLCJlbWFpbCI6InVzZXJAbWl1LmVkdSIsInJvbGVzIjpbeyJyb2xlIjoiVVNFUiJ9XX0sImV4cCI6MTY4NzQwMjI4OX0.M2mNcn75vZfQ4jp_Tda-8zm3je7OsOHK54BoJNXtPi4",
 							"type": "string"
 						}
 					]
@@ -287,7 +287,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/post/4",
+					"raw": "http://localhost:8080/api/post/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -296,7 +296,7 @@
 					"path": [
 						"api",
 						"post",
-						"4"
+						""
 					]
 				}
 			},
