@@ -18,14 +18,16 @@ import java.util.regex.Pattern;
 @Service
 public class PostServiceProxy implements IPostServiceProxy {
     private final ConfigurableEnvironment env;
-    RestTemplate restTemplate = new RestTemplate();
+    private final RestTemplate restTemplate;
     private String postUrl;
     private String pplUrl;
+
     @Autowired
-    public PostServiceProxy(ConfigurableEnvironment env) {
+    public PostServiceProxy(ConfigurableEnvironment env, RestTemplate restTemplate) {
         this.env = env;
         this.postUrl = env.getProperty("post.base.url") + "/post/{id}";
         this.pplUrl = env.getProperty("post.base.url") + "/post/";
+        this.restTemplate = restTemplate;
     }
 
     @Override

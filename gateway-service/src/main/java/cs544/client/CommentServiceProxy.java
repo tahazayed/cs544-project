@@ -17,23 +17,28 @@ import java.util.regex.Pattern;
 @Service
 public class CommentServiceProxy implements ICommentServiceProxy {
     private final ConfigurableEnvironment env;
-    RestTemplate restTemplate = new RestTemplate();
+
+    private final RestTemplate restTemplate;
     private String baseUrl;
     private String commentUrl;
     private String pplUrl;
+
     @Autowired
-    public CommentServiceProxy(ConfigurableEnvironment env) {
+    public CommentServiceProxy(ConfigurableEnvironment env, RestTemplate restTemplate) {
         this.env = env;
         this.baseUrl = env.getProperty("comment.base.url");
         this.commentUrl = baseUrl + "/comment/{id}";
         this.pplUrl = baseUrl + "/comment/";
+        this.restTemplate = restTemplate;
     }
+
     @Override
 
     public Comment get(Long id) {
 
         return restTemplate.getForObject(commentUrl, Comment.class, id);
     }
+
     @Override
     public List<Comment> getAll() {
         ResponseEntity<List<Comment>> response =
@@ -42,6 +47,7 @@ public class CommentServiceProxy implements ICommentServiceProxy {
                         });
         return response.getBody();
     }
+
     @Override
     public Long add(Comment p) {
         URI uri = restTemplate.postForLocation(pplUrl, p);

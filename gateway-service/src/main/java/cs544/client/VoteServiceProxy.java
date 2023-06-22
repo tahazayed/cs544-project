@@ -19,13 +19,14 @@ import java.util.regex.Pattern;
 @Service
 public class VoteServiceProxy implements IVoteServiceProxy {
     private final ConfigurableEnvironment env;
-    RestTemplate restTemplate = new RestTemplate();
+    private final RestTemplate restTemplate;
     private String baseUrl;
 
-
-    public VoteServiceProxy( @Autowired ConfigurableEnvironment env) {
+    @Autowired
+    public VoteServiceProxy(ConfigurableEnvironment env, RestTemplate restTemplate) {
         this.env = env;
         this.baseUrl = env.getProperty("vote.base.url");
+        this.restTemplate = restTemplate;
     }
 
     @Override
@@ -67,12 +68,15 @@ public class VoteServiceProxy implements IVoteServiceProxy {
                         });
         return response.getBody();
     }
+
     @Override
     public Long add(VoteCreationObject voteCreationObject) {
         String postUrl = baseUrl + "/vote/";
 
         URI uri = restTemplate.postForLocation(postUrl, voteCreationObject);
-        if (uri == null) { return null; }
+        if (uri == null) {
+            return null;
+        }
         Matcher m = Pattern.compile(".*/vote/(\\d+)").matcher(uri.getPath());
         m.matches();
         return Long.parseLong(m.group(1));
@@ -89,6 +93,7 @@ public class VoteServiceProxy implements IVoteServiceProxy {
         String postUrl = baseUrl + "/vote/post/{id}";
         restTemplate.delete(postUrl, id);
     }
+
     @Override
     public void deleteAllByCommentId(@NotNull Long id) {
         String postUrl = baseUrl + "/vote/comment/{id}";

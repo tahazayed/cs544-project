@@ -26,26 +26,27 @@ import cs544.model.enums.ERoles;
 
 @Service
 public class UserServiceProxy implements IUserServiceProxy {
-
     private final ConfigurableEnvironment env;
-    RestTemplate restTemplate = new RestTemplate();
+    private final RestTemplate restTemplate;
     private String baseUrl;
     private String userUrl;
     private String pplUrl;
     private String loginUrl;
+
     @Autowired
-    public UserServiceProxy(ConfigurableEnvironment env) {
+    public UserServiceProxy(ConfigurableEnvironment env, RestTemplate restTemplate) {
         this.env = env;
         //this.baseUrl = "http://localhost:8081/api";
         this.baseUrl = env.getProperty("user.base.url");
         this.userUrl = baseUrl + "/user/{id}";
         this.pplUrl = baseUrl + "/user/";
         this.loginUrl = baseUrl + "/oauthtoken/";
+        this.restTemplate = restTemplate;
     }
 
     @Override
     public List<User> getAll() {
-         ResponseEntity<List<User>> response =
+        ResponseEntity<List<User>> response =
                 restTemplate.exchange(pplUrl, HttpMethod.GET, null,
                         new ParameterizedTypeReference<List<User>>() {
                         });
@@ -54,14 +55,14 @@ public class UserServiceProxy implements IUserServiceProxy {
 
     @Override
     public User register(UserRegisterObject user) {
-        
+
         // ADDING DEFAULT USER ROLE EACH TIME
         Roles defaultUserRole = new Roles();
         defaultUserRole.setRole(ERoles.USER);
         List<Roles> roles = user.getRoles();
         roles.add(defaultUserRole);
 
-        User createdUser = restTemplate.postForObject(pplUrl, user,User.class);
+        User createdUser = restTemplate.postForObject(pplUrl, user, User.class);
         return createdUser;
     }
 
@@ -72,12 +73,12 @@ public class UserServiceProxy implements IUserServiceProxy {
 
     @Override
     public String login(UserLoginObject myUser) {
-        String token = restTemplate.postForObject(loginUrl, myUser,String.class);
-        
+        String token = restTemplate.postForObject(loginUrl, myUser, String.class);
+
         // Matcher m = Pattern.compile(".*/post/(\\d+)").matcher(uri.getPath());
         // m.matches();
         return token;
-        
+
     }
-    
+
 }
