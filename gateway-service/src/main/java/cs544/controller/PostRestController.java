@@ -27,14 +27,14 @@ public class PostRestController {
     }
 
     @PreAuthorize("hasAuthority('USER')")
-    @GetMapping(value = "/post/", produces = "application/json")
+    @GetMapping(value = "/posts/", produces = "application/json")
     public List<Post> getAll() {
 
         return postService.getAll();
     }
 
     @PreAuthorize("hasAuthority('USER')")
-    @GetMapping(value = "/post/{id}", produces = "application/json")
+    @GetMapping(value = "/posts/{id}", produces = "application/json")
     public Post get(@PathVariable long id) {
 
         return postService.get(id);
@@ -42,7 +42,7 @@ public class PostRestController {
 
     //TODO: Use the userId from logged in user
     @PreAuthorize("hasAuthority('USER')")
-    @PostMapping(value = "/post/", consumes = "application/json")
+    @PostMapping(value = "/posts/", consumes = "application/json")
     public ResponseEntity<?> add(@RequestBody PostCreationObject postCreationObject) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication != null && authentication.isAuthenticated()) {
@@ -58,7 +58,7 @@ public class PostRestController {
     }
 
     @PreAuthorize("hasAuthority('USER')")
-    @PutMapping(value = "/post/{id}", consumes = "application/json")
+    @PutMapping(value = "/posts/{id}", consumes = "application/json")
     public ResponseEntity<?> update(@RequestBody Post post, @PathVariable Long id) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -90,7 +90,7 @@ public class PostRestController {
     }
 
     @PreAuthorize("hasAuthority('ADMIN')")
-    @DeleteMapping(value = "/post/{id}", produces = "application/json")
+    @DeleteMapping(value = "/posts/{id}", produces = "application/json")
     public ResponseEntity<String> delete(@PathVariable long id) {
         postService.delete(id);
         return new ResponseEntity<>("Post entity deleted successfully.", HttpStatus.OK);

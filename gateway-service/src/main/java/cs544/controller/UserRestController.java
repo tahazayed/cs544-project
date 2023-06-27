@@ -28,12 +28,12 @@ public class UserRestController {
     }
 
     @PreAuthorize("hasAuthority('ADMIN')")
-    @GetMapping(value = "/user/", produces = "application/json")
+    @GetMapping(value = "/users/", produces = "application/json")
     public List<User> getAll() {
         return userService.getAll();
     }
 
-    @PostMapping(value = "/user/login/", consumes = "application/json", produces = "application/json")
+    @PostMapping(value = "/users/login/", consumes = "application/json", produces = "application/json")
     public ResponseEntity<?> login(@RequestBody UserLoginObject user) {
          Map<String, Object> response = new HashMap<>();
          String token = userService.login(user);
@@ -41,21 +41,21 @@ public class UserRestController {
         return new ResponseEntity<>(token, HttpStatus.OK);
     }
 
-    @PostMapping(value = "/user/", consumes = "application/json", produces = "application/json")
+    @PostMapping(value = "/users/", consumes = "application/json", produces = "application/json")
     public ResponseEntity<?> register(@RequestBody UserRegisterObject user) {
          User createdUser = userService.register(user);
         return new ResponseEntity<>(createdUser, HttpStatus.OK);
 
     }
 
-    // @GetMapping(value = "/user/{id}",produces = "application/json")
+    // @GetMapping(value = "/users/{id}",produces = "application/json")
     // public Post get(@PathVariable long id){
 
     //     return postService.get(id);
     // }
 
 
-    // @PutMapping(value = "/user/{id}", consumes = "application/json")
+    // @PutMapping(value = "/users/{id}", consumes = "application/json")
     // public ResponseEntity<?> update(@RequestBody Post post, @PathVariable Long id) {
     //     post.setId(id);
     //     post.generateDate();

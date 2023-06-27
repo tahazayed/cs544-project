@@ -28,35 +28,35 @@ public class VoteRestController {
     }
 
     @PreAuthorize("hasAuthority('USER')")
-    @GetMapping(value = "/vote/", produces = "application/json")
+    @GetMapping(value = "/votes/", produces = "application/json")
     public List<Vote> getAll() {
 
         return voteServiceProxy.getAll();
     }
 
     @PreAuthorize("hasAuthority('USER')")
-    @GetMapping(value = "/vote/post/{id}", produces = "application/json")
+    @GetMapping(value = "/votes/post/{id}", produces = "application/json")
     public List<Vote> getAllByPostId(@PathVariable Long id) {
 
         return voteServiceProxy.getAllByPostId(id);
     }
 
     @PreAuthorize("hasAuthority('USER')")
-    @GetMapping(value = "/vote/comment/{id}", produces = "application/json")
+    @GetMapping(value = "/votes/comment/{id}", produces = "application/json")
     public List<Vote> getAllByCommentId(@PathVariable Long id) {
 
         return voteServiceProxy.getAllByCommentId(id);
     }
 
     @PreAuthorize("hasAuthority('USER')")
-    @GetMapping(value = "/vote/{id}", produces = "application/json")
+    @GetMapping(value = "/votes/{id}", produces = "application/json")
     public Vote get(@PathVariable Long id) {
 
         return voteServiceProxy.get(id);
     }
 
     @PreAuthorize("hasAuthority('USER')")
-    @PostMapping(value = "/vote/", consumes = "application/json")
+    @PostMapping(value = "/votes/", consumes = "application/json")
     public ResponseEntity<?> add(@RequestBody VoteCreationObject voteCreationObject) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication != null && authentication.isAuthenticated()) {
@@ -72,21 +72,21 @@ public class VoteRestController {
     }
 
 //    @PreAuthorize("hasAuthority('USER')")
-//    @DeleteMapping("/vote/{id}")
+//    @DeleteMapping("/votes/{id}")
 //    public ResponseEntity<String> delete(@PathVariable Long id) {
 //        voteServiceProxy.delete(id);
 //        return new ResponseEntity<>("Vote entity deleted successfully.", HttpStatus.OK);
 //    }
 
 //    @PreAuthorize("hasAuthority('ADMIN')")
-//    @DeleteMapping("/vote/post/{id}")
+//    @DeleteMapping("/votes/post/{id}")
 //    public ResponseEntity<String> deleteAllByPostId(@PathVariable Long id) {
 //        voteServiceProxy.deleteAllByPostId(id);
 //        return new ResponseEntity<>("Vote entity deleted successfully.", HttpStatus.OK);
 //    }
 
 //    @PreAuthorize("hasAuthority('ADMIN')")
-//    @DeleteMapping("/vote/comment/{id}")
+//    @DeleteMapping("/votes/comment/{id}")
 //    public ResponseEntity<String> deleteAllByCommentId(@PathVariable Long id) {
 //        voteServiceProxy.deleteAllByCommentId(id);
 //        return new ResponseEntity<>("Vote entity deleted successfully.", HttpStatus.OK);
